@@ -119,12 +119,13 @@
 
 
 	.container.active .clip {
+		transition-delay: calc( 2.3 * var(--transition-delay));
 		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 	}
 
 	.container .clip.active {
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-		transition-delay: var(--transition-delay);
+		transition-delay: calc( 3.6 * var(--transition-delay));
 	}
 
 	.section:hover .clip::before {
@@ -188,7 +189,7 @@
 	}
 
 	.container .clip.active .title::before {
-		transition-delay: calc( 2.3 * var(--transition-delay));
+		transition-delay: calc( 1.7 * var(--transition-delay));
 		height: 100%;
 		transform: translateY(200%);
 	}
