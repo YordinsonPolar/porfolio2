@@ -1,17 +1,23 @@
 <script>
 	import About from '../components/about/About.svelte';
 	import BackToTheSection from '../components/BackToTheSection.svelte';
+
 	let active = "";
+	let loading = true;
 
-	$: console.log(active)
-
+	const setActive = (option) => {
+		active = option;
+		setTimeout(() => {
+			loading = false;
+		}, 3000)
+	}
 </script>
 
 <div class="container" class:active={active !== ""}>
-	<BackToTheSection bind:active />
+	<BackToTheSection bind:active bind:loading />
 	<section class="section">
 		<div 
-			on:click|self={() => active = "projects"}
+			on:click|self={() => setActive("projects")}
 			href="/" 
 			title="Projects"
 			class:active={active === "projects"}
@@ -25,7 +31,7 @@
 	</section>
 	<section class="section">
 		<div 
-			on:click|self={() => active = "about"}
+			on:click|self={() => setActive("about")}
 			class:active={active === "about"}
 			href="/" 
 			title="About" 
@@ -35,15 +41,14 @@
 				<h2>About</h2>
 				<p>Known about me</p>
 			</div>
-			{#if active === "about"}
+			{#if active === "about" && loading === false}
 				<About />
 			{/if}
-			<About />
 		</div>
 	</section>
 	<section class="section">
 		<div 
-			on:click|self={() => active = "contact"}
+			on:click|self={() => setActive("contact")}
 			class:active={active === "contact"}
 			href="/" 
 			title="Contact" 

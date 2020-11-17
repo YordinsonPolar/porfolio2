@@ -9,6 +9,7 @@
 	};
 </script>
 
+
 <section class="about">
 	<div class="about-wrapper">
 		<div class="perfil">
@@ -44,6 +45,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background: rgba(0,0,0, .5);
 	}
 
 	.about-wrapper {
