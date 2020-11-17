@@ -1,4 +1,5 @@
 <script>
+	import About from '../components/about/About.svelte';
 	import BackToTheSection from '../components/BackToTheSection.svelte';
 	let active = "";
 
@@ -7,7 +8,8 @@
 </script>
 
 <div class="container" class:active={active !== ""}>
-	<BackToTheSection bind:active />
+	<About />
+	<!-- <BackToTheSection bind:active />
 	<section class="section">
 		<div 
 			on:click|self={() => active = "projects"}
@@ -49,7 +51,7 @@
 				<p>Say me hola!</p>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </div>
 
 <style>
@@ -117,7 +119,6 @@
     right: 5%;
 	 }
 
-
 	.container.active .clip {
 		transition-delay: calc( 2.3 * var(--transition-delay));
 		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
@@ -131,7 +132,6 @@
 	.section:hover .clip::before {
 		background-color: rgba(0,0,0, .5);
 	}
-
 
 	/* --------------- TITLE ----------------- */
 
