@@ -9,6 +9,7 @@
 	--transition-time: 400ms;
 	--transition-delay: calc(var(--transition-time) / 2);
 	--line-delay: calc(var(--transition-time) * 1.4);
+	--primary: #f5e574;
 }
 
 html, body {
