@@ -2,6 +2,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: #f9f9f9;
+}
+
+:root {
+	--transition-time: 400ms;
+	--transition-delay: calc(var(--transition-time) / 2);
 }
 
 html, body {

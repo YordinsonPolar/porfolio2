@@ -1,51 +1,59 @@
 <script>
-	import Section from '../components/Section.svelte';
+	import BackToTheSection from '../components/BackToTheSection.svelte';
 	let active = "";
 
 	$: console.log(active)
 
-
 </script>
 
 <div class="container" class:active={active !== ""}>
-	<Section
-		bind:active 
-		clipPath="polygon(0 0, 56% 0, 23% 100%, 0% 100%)"
-		bgImg="/images/projects.jpg"
-	/>
-<section class="section">
-			<div 
-				on:click|self={() => active = "about"}
-				class:active={active === "about"}
-				href="/" 
-				title="Projects" 
-				class="clip about-clip"
-				>
-				<div class="title">
-					<button on:click={() => active = ""} >back</button>
-					<h2>Projects</h2>
-					<p>Check my projects</p>
-				</div>
+	<BackToTheSection bind:active />
+	<section class="section">
+		<div 
+			on:click|self={() => active = "projects"}
+			href="/" 
+			title="Projects"
+			class:active={active === "projects"}
+			class="clip projects-clip"
+			>
+			<div class="title">
+				<h2>Projects</h2>
+				<p>Check my projects</p>
 			</div>
-</section>
-<section class="section">
-			<div 
-				on:click|self={() => active = "contact"}
-				class:active={active === "contact"}
-				href="/" 
-				title="Projects" 
-				class="clip contact-clip"
-				>
-				<div class="title">
-					<button on:click={() => active = ""} >back</button>
-					<h2>Projects</h2>
-					<p>Check my projects</p>
-				</div>
+		</div>
+	</section>
+	<section class="section">
+		<div 
+			on:click|self={() => active = "about"}
+			class:active={active === "about"}
+			href="/" 
+			title="About" 
+			class="clip about-clip"
+			>
+			<div class="title">
+				<h2>About</h2>
+				<p>Known about me</p>
 			</div>
-</section>
+		</div>
+	</section>
+	<section class="section">
+		<div 
+			on:click|self={() => active = "contact"}
+			class:active={active === "contact"}
+			href="/" 
+			title="Contact" 
+			class="clip contact-clip"
+			>
+			<div class="title">
+				<h2>Contact</h2>
+				<p>Say me hola!</p>
+			</div>
+		</div>
+	</section>
 </div>
 
 <style>
+
 	.container {
 		display: flex;
 		justify-content: center;
@@ -55,32 +63,60 @@
 		transition: 300ms;
 	}
 
+	/* --------- CLIP -------- */
+
 	.container .clip {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		transition: 300ms;
+		transition: var(--transition-time);
+	}
+
+	.container .clip::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: "";
+		transition: background-color var(--transition-time);
 	}
 
 	.container .clip.projects-clip {
 		background-image: url('/images/projects.jpg');
 		background-size: cover;
-		clip-path: var(--clip-path);
+		clip-path: polygon(0 0, 50% 0, 20% 100%, 0% 100%);
 	}
 
 	.container .clip.about-clip {
 		background-image: url('/images/about.jpg');
 		background-size: cover;
-		clip-path: polygon(49% 0, 100% 0%, 49% 100%, 20% 100%);
+		clip-path: polygon(50% 0, 100% 0%, 50% 100%, 20% 100%);
 	}
 
 	.container .clip.contact-clip {
 		background-image: url('/images/contact.jpg');
 		background-size: cover;
-		clip-path: polygon(100% 0, 100% 0, 100% 99%, 50% 100%);
+		clip-path: polygon(100% 0, 100% 0, 100% 100%, 50% 100%);
 	}
+
+	.container .clip.projects-clip .title  {
+    left: 5%;
+    bottom: 250px;
+	 }
+
+	.container .clip.about-clip .title {
+	 	right: 25%;
+	 	top: 50px;
+	 }
+
+	.container .clip.contact-clip .title{
+	 	bottom: 10%;
+    right: 5%;
+	 }
+
 
 	.container.active .clip {
 		clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
@@ -88,8 +124,73 @@
 
 	.container .clip.active {
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-		transition-delay: 300ms;
-		z-index: 99999;
+		transition-delay: var(--transition-delay);
+	}
+
+	.section:hover .clip::before {
+		background-color: rgba(0,0,0, .5);
+	}
+
+
+	/* --------------- TITLE ----------------- */
+
+	.title {
+	 	position: absolute;
+		font-size: 2.5rem;
+		padding-left: 15px;
+		overflow: hidden;
+		pointer-events: none;
+	}
+
+	.title h2 {
+		transition: transform var(--transition-time);
+	}
+
+	.title p {
+		font-size: 1.4rem;
+		color: #a0a0a0;
+		font-weight: 300;
+		transform: translate(-200%);
+		transition: transform var(--transition-time);
+	}
+
+	.title::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+		width: 5px;
+		background: red;
+		height: 0;
+		transition: 
+			height var(--transition-time),
+			transform var(--transition-time);
+	}
+
+	.section:hover .title::before {
+		height: 100%;
+	}
+
+	.section:hover .title p {
+		transition-delay: var(--transition-delay);
+		transform: translate(0);
+	}
+
+	/* ------- section active ----- */
+
+	.container .clip.active .title h2 {
+		transform: translateY(-200%);
+	}
+	
+	.container .clip.active .title p {
+		transition-delay: calc( 1.3 * var(--transition-delay));
+		transform: translateY(200%);
+	}
+
+	.container .clip.active .title::before {
+		transition-delay: calc( 2.3 * var(--transition-delay));
+		height: 100%;
+		transform: translateY(200%);
 	}
 
 </style>
