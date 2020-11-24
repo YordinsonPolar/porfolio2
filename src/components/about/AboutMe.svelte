@@ -69,7 +69,7 @@
 		position: relative;
 		top: -48px;
 		left: 0;
-		font-size: 2rem;
+		font-size: var(--title-size);
 		opacity: 0;
 		border-bottom: 1px solid var(--primary);
 		animation: vanish var(--transition-time) ease-in-out forwards;

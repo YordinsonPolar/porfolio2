@@ -6,9 +6,11 @@
 }
 
 :root {
+	--title-size: 4rem;
 	--transition-time: 400ms;
 	--transition-delay: calc(var(--transition-time) / 2);
 	--line-delay: calc(var(--transition-time) * 1.4);
+	--line-volumen: 4px;
 	--primary: #f5e574;
 }
 
