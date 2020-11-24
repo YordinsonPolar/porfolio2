@@ -1,5 +1,6 @@
 <script>
 	import Line from '../Line.svelte';
+	export let aboutDelay;
 </script>
 
 <span class="marco">
@@ -9,28 +10,30 @@
 		distance="100%" 
 		position="left" 
 		origin="bottom" 
-		volumen="4px" />
+		volumen="4px"
+		delay="calc({aboutDelay} * var(--transition-time))" />
 	<Line
 	  time="var(--transition-time)"
 	  color="var(--primary)" 
 		distance="100%" 
 		position="bottom" 
 		origin="left" 
-		volumen="4px"/>
+		volumen="4px"
+		delay="calc({aboutDelay} * var(--transition-time))"/>
 	<Line
 	  time="var(--transition-time)"
 	  color="var(--primary)" 
 		distance="100%" 
 		position="right" 
 		origin="bottom" 
-		volumen="4px" delay="calc( .8 * var(--transition-time))" />
+		volumen="4px" delay="calc({aboutDelay + .6} * var(--transition-time))" />
 	<Line
 	  time="var(--transition-time)"
 	  color="var(--primary)" 
 		distance="100%" 
 		position="top" 
 		origin="left" 
-		volumen="4px" delay="calc( .8* var(--transition-time))" />
+		volumen="4px" delay="calc({aboutDelay + .6} * var(--transition-time))" />
 </span>
 
 

@@ -7,13 +7,15 @@
 		target.style.transform = "translateX(0)"
 		target.style.opacity = 1
 	};
+
+	const aboutDelay = 4;
 </script>
 
 
 <section class="about">
 	<div class="about-wrapper">
 		<div class="perfil">
-			<Marco />
+			<Marco {aboutDelay} />
 			<img 
 				class="img" 
 				on:load={lazyLodingImg} 
@@ -27,9 +29,9 @@
 				distance="100%" 
 				position="bottom" 
 				origin="left" 
-				volumen="4px" delay="calc( 1.4 * var(--transition-time))" />
+				volumen="4px" delay="calc({aboutDelay + 1.2} * var(--transition-time))" />
 		</span>
-		<AboutMe />
+		<AboutMe {aboutDelay} />
 	</div>
 </section>
 
@@ -37,14 +39,12 @@
 
 <style>
 	.about {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		height: 100vh;
+		padding-bottom: 40px;
 		background: rgba(0,0,0, .5);
 	}
 
@@ -74,6 +74,26 @@
 	.line {
 		position: relative;
 		height: 4px;
+	}
+
+	@media (max-width: 620px) {
+		.about {
+			height: 100%;
+		}
+
+		.about-wrapper {
+			margin-top: 100px;
+			width: 80%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.img {
+			min-height: 500px;
+		}
 	}
 	
 </style>

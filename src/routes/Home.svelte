@@ -5,12 +5,7 @@
 	let active = "";
 	let loading = true;
 
-	const setActive = (option) => {
-		active = option;
-		setTimeout(() => {
-			loading = false;
-		}, 3000)
-	}
+	const setActive = (option) => active = option;
 </script>
 
 <div class="container" class:active={active !== ""}>
@@ -41,7 +36,7 @@
 				<h2>About</h2>
 				<p>Known about me</p>
 			</div>
-			{#if active === "about" && loading === false}
+			{#if active === "about"}
 				<About />
 			{/if}
 		</div>
@@ -80,7 +75,7 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
 		transition: var(--transition-time);
 	}
 
@@ -96,18 +91,21 @@
 
 	.container .clip.projects-clip {
 		background-image: url('/images/projects.jpg');
+		background-attachment: fixed;
 		background-size: cover;
 		clip-path: polygon(0 0, 50% 0, 20% 100%, 0% 100%);
 	}
 
 	.container .clip.about-clip {
 		background-image: url('/images/about.jpg');
+		background-attachment: fixed;
 		background-size: cover;
 		clip-path: polygon(50% 0, 100% 0%, 50% 100%, 20% 100%);
 	}
 
 	.container .clip.contact-clip {
 		background-image: url('/images/contact.jpg');
+		background-attachment: fixed;
 		background-size: cover;
 		clip-path: polygon(100% 0, 100% 0, 100% 100%, 50% 100%);
 	}
@@ -201,5 +199,6 @@
 		height: 100%;
 		transform: translateY(200%);
 	}
+
 
 </style>
