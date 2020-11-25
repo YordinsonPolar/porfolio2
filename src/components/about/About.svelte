@@ -1,6 +1,6 @@
 <script>
 	import Line from '../../components/common/Line.svelte';
-	import Marco from './Marco.svelte';
+	import Marco from '../common/Marco.svelte';
 	import AboutMe from './AboutMe.svelte';
 
 	const lazyLodingImg = ({ target }) => {

@@ -3,6 +3,7 @@
 	import ProjectsCard from './ProjectCard.svelte';
 
 	const projectsDelay = 5;
+
 </script>
 
 <section class="projects">
@@ -11,14 +12,14 @@
 			<h1 class="title">
 				<Line
 				  time="var(--transition-time)"
-				  color="var(--primary)" 
+				  color="var(--projects-color)" 
 					distance="100%" 
 					position="bottom" 
 					origin="left" 
 					volumen="4px" delay="calc({projectsDelay + .6} * var(--transition-time))" />
 				<Line
 				  time="var(--transition-time)"
-				  color="var(--primary)" 
+				  color="var(--projects-color)" 
 					distance="100%" 
 					position="right" 
 					origin="bottom" 
@@ -27,6 +28,7 @@
 			</h1>
 		</div>
 		<div class="grid">
+			<ProjectsCard />
 			<ProjectsCard />
 			<ProjectsCard />
 			<ProjectsCard />
@@ -49,21 +51,21 @@
 
 	.projects .projects-wrapper {
 		margin: 0 auto;
-		width: 90%;
+		width: 85%;
 		height: 100%;
 	}
 
 	.projects .header .title {
 		position: relative;
 		display: inline;
-		padding: 20px 35px;
+		padding: 20px 35px 20px 0;
 		font-size: var(--title-size);
 	}
 
 	.grid {
 		display: grid;
-		grid-template-columns: repeat(4,1fr);
-		grid-gap: 20px;
+		grid-template-columns: repeat(3,1fr);
+		grid-gap: 60px;
 		margin-top: 50px;
 	}
 
