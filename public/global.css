@@ -12,7 +12,10 @@
 	--transition-delay: calc(var(--transition-time) / 2);
 	--line-delay: calc(var(--transition-time) * 1.4);
 	--line-volumen: 4px;
-	--primary: #f5e574;
+	--projects-color: #FF6464;
+	--about-color: #FFAC64;
+	--contact-color: #C164FF;
+	--form-color: #7272C7;
 }
 
 html, body {
