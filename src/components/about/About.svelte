@@ -15,7 +15,7 @@
 <section class="about">
 	<div class="about-wrapper">
 		<div class="perfil">
-			<Marco {aboutDelay} />
+			<Marco {aboutDelay} color="var(--about-color)"/>
 			<img 
 				class="img" 
 				on:load={lazyLodingImg} 
@@ -25,7 +25,7 @@
 		<span class="line">
 			<Line
 			  time="var(--transition-time)"
-			  color="var(--primary)" 
+			  color="var(--about-color)" 
 				distance="100%" 
 				position="bottom" 
 				origin="left" 
@@ -68,7 +68,8 @@
 		transform: translateX(-10%); 
 		transition: 
 			opacity var(--transition-time),
-			transform var(--transition-time); 
+			transform var(--transition-time);
+		transition-delay: 1200ms; 
 	}
 
 	.line {

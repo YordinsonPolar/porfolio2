@@ -7,21 +7,21 @@
 <div class="about-me">
 	<Line
 	  time="var(--transition-time)"
-	  color="var(--primary)" 
+	  color="var(--about-color)" 
 		distance="100%" 
 		position="left" 
 		origin="center" 
 		volumen="4px" delay="calc({aboutDelay + 1.6} * var(--transition-time))"/>
 	<Line
 	  time="var(--transition-time)"
-	  color="var(--primary)" 
-		distance="30px" 
+	  color="var(--about-color)" 
+		distance="55px" 
 		position="top" 
 		origin="left" 
 		volumen="4px" delay="calc({aboutDelay + 2}* var(--transition-time))" />
 	<Line
 	  time="var(--transition-time)"
-	  color="var(--primary)" 
+	  color="var(--about-color)" 
 		distance="103px" 
 		position="bottom" 
 		origin="left" 
@@ -32,7 +32,7 @@
 		<span class="line">
 			<Line
 			  time="var(--transition-time)"
-			  color="var(--primary)" 
+			  color="var(--about-color)" 
 				distance="100%" 
 				position="bottom" 
 				origin="left" 
@@ -51,7 +51,7 @@
 	
 	<div 
 		class="projects-button">
-		<Button label="Projects" size="1rem" />	
+		<Button label="Projects" size="25px" color="var(--about-color)" />	
 	</div>
 </div>
 
@@ -60,7 +60,7 @@
 		--timeDelay: 7;
 		--delay: calc( var(--timeDelay) * var(--transition-time));
 		position: relative;
-		padding: 0 50px;
+		padding: 0 80px;
 		min-height: 500px;
 	}
 
@@ -88,8 +88,8 @@
 	.about-me div .line {
 		position: absolute;
 		top: 50%;
-		left: -48px;
-		width: 15px;
+		left: -78px;
+		width: 35px;
 		height: 4px;
 		content: "";
 		transform: translateY(50%);

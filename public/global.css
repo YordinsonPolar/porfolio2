@@ -9,7 +9,7 @@
 	--border-radius: 4px;
 	--title-size: 4rem;
 	--transition-time: 400ms;
-	--transition-delay: calc(var(--transition-time) / 2);
+	--transition-delay: calc(var(--transition-time) / 1.4);
 	--line-delay: calc(var(--transition-time) * 1.4);
 	--line-volumen: 4px;
 	--projects-color: #FF6464;

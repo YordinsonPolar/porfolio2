@@ -15,7 +15,7 @@
 		font-weight: 500;
 		font-size: var(--size);
 		padding: 6px 30px;
-		border: calc( var(--size) / 4.5) solid var(--color);
+		border: calc( var(--size) / 5) solid var(--color);
 		transform: skewX(-20deg);
 		cursor: pointer;
 		background-image: linear-gradient(45deg, var(--color) 50%, transparent 50%);
