@@ -4,7 +4,7 @@
 
 <div class="card">
 	<div class="img">
-		<img src="/images/about.jpg" alt="poll">
+		<!-- <img src="/images/about.jpg" alt="poll"> -->
 	</div>
 	<div class="info-section">
 		<h2>Poll App</h2>
@@ -17,5 +17,7 @@
 </div>
 
 <style>
-	
+	.img {
+		width: 100%;
+	}
 </style>

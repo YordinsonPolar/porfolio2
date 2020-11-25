@@ -1,5 +1,6 @@
 <script>
 	import Line from '../Line.svelte';
+	import ProjectsCard from './ProjectCard.svelte';
 
 	const projectsDelay = 5;
 </script>
@@ -26,19 +27,10 @@
 			</h1>
 		</div>
 		<div class="grid">
-			<div class="card">
-				<div class="img">
-					<img src="/images/about.jpg" alt="poll">
-				</div>
-				<div class="info-section">
-					<h2>Poll App</h2>
-					<p class="description">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat aut similique laborum dolorem asperiores quo veniam fugit velit molestiae assumenda veritatis ratione reiciendis corrupti rerum, officia animi magni vitae, amet.
-					</p>
-					<div class="tags"></div>
-					<button>Live Example</button>
-				</div>
-			</div>
+			<ProjectsCard />
+			<ProjectsCard />
+			<ProjectsCard />
+			<ProjectsCard />
 		</div>
 	</div>
 </section>
