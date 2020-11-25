@@ -45,6 +45,6 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		transform: translate(-10%, 6%);
+		transform: translate(-25px, 25px);
 	}
 </style>

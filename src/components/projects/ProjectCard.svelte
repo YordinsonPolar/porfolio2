@@ -38,7 +38,6 @@
 
 	.card {
 		position: relative;
-		min-height: 600px;
 	}
 
 	.card .card-wrapper {
@@ -50,7 +49,6 @@
 	.card .card-wrapper:hover {
 		transform: scale(1.04);
 	}
-
 
 	.card .card-wrappe .img img {
 		min-height: 30%;
