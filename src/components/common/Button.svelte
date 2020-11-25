@@ -21,7 +21,7 @@
 		background-image: linear-gradient(45deg, var(--color) 50%, transparent 50%);
 		background-position: 100%;
 		background-size: 400%;
-		transition: 400ms background ease-in-out;
+		transition: var(--transition-time) background ease-in-out;
 	}
 
 

@@ -35,6 +35,10 @@ img {
 	width: 100%;
 }
 
+button {
+	outline: none;
+}
+
 @media (max-width: 1024px) {
 	html {
 		font-size: 14px;
