@@ -46,7 +46,8 @@
 		min-height: 100%;
 		display: grid;
 		align-items: center;
-		margin: 50px 0;
+		padding: 80px 0;
+		background: rgba(0,0,0, .5);
 	}
 
 	.projects .projects-wrapper {

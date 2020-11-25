@@ -50,8 +50,8 @@
 		transform: scale(1.04);
 	}
 
-	.card .card-wrappe .img img {
-		min-height: 30%;
+	.card .card-wrappe .img {
+		min-height: 300px;
 	}
 
 	.card .card-wrapper .info-section {

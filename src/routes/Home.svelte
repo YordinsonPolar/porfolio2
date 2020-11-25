@@ -10,8 +10,7 @@
 </script>
 
 <div class="container" class:active={active !== ""}>
-	<Projects />
-	<!-- <BackToTheSection bind:active bind:loading />
+	<BackToTheSection bind:active bind:loading />
 	<section class="section">
 		<div 
 			on:click|self={() => setActive("projects")}
@@ -24,6 +23,9 @@
 				<h2>Projects</h2>
 				<p>Check my projects</p>
 			</div>
+			{#if active === "projects"}
+				<Projects />
+			{/if}
 		</div>
 	</section>
 	<section class="section">
@@ -56,7 +58,7 @@
 				<p>Say me hola!</p>
 			</div>
 		</div>
-	</section> -->
+	</section>
 </div>
 
 <style>
