@@ -1,5 +1,5 @@
 <script>
-	import Line from '../Line.svelte';
+	import Line from '../common/Line.svelte';
 	export let aboutDelay;
 </script>
 

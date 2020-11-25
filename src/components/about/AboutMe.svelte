@@ -1,5 +1,6 @@
 <script>
-	import Line from '../Line.svelte';
+	import Line from '../common/Line.svelte';
+	import Button from '../common/Button.svelte';
 	export let aboutDelay;
 </script>
 
@@ -50,9 +51,7 @@
 	
 	<div 
 		class="projects-button">
-		<button>
-			Projects
-		</button>
+		<Button label="Projects" size="1rem" />	
 	</div>
 </div>
 
@@ -122,15 +121,6 @@
 			transform: translate(0);
 			opacity: 1;
 		}
-	}
-
-	.about-me button {
-		background: none;
-		color: var(--primary);
-		font-size: 2rem;
-		padding: 5px 35px;
-		border: 4px solid var(--primary);
-		transform: skewX(-20deg);
 	}
 
 	@media (max-width: 1024px) {

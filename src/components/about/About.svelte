@@ -1,5 +1,5 @@
 <script>
-	import Line from '../../components/Line.svelte';
+	import Line from '../../components/common/Line.svelte';
 	import Marco from './Marco.svelte';
 	import AboutMe from './AboutMe.svelte';
 

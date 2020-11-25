@@ -1,5 +1,5 @@
 <script>
-	import Line from '../Line.svelte';
+	import Line from '../common/Line.svelte';
 	import ProjectsCard from './ProjectCard.svelte';
 
 	const projectsDelay = 5;
@@ -60,7 +60,6 @@
 		font-size: var(--title-size);
 	}
 
-
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(4,1fr);
@@ -68,8 +67,4 @@
 		margin-top: 50px;
 	}
 
-	.card {
-		background: darkCyan;
-		height: 450px;
-	}
 </style>
