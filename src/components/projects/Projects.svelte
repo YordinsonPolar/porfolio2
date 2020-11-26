@@ -1,41 +1,51 @@
 <script>
+	import { onDestroy } from 'svelte';
 	import Line from '../common/Line.svelte';
 	import ProjectsCard from './ProjectCard.svelte';
 
-	const projectsDelay = 5;
+	const projectsDelay = 5000;
+	let animationDone = false;
 
+	const cards = [1,2,3,4,5,6];
+
+	const delay = setTimeout(()=>{
+		animationDone = true;
+	}, projectsDelay);
+
+	onDestroy(() => clearTimeout(delay));
 </script>
 
-<section class="projects">
-	<div class="projects-wrapper">
-		<div class="header">
-			<h1 class="title">
-				<Line
-				  time="var(--transition-time)"
-				  color="var(--projects-color)" 
-					distance="100%" 
-					position="bottom" 
-					origin="left" 
-					volumen="4px" delay="calc({projectsDelay + .6} * var(--transition-time))" />
-				<Line
-				  time="var(--transition-time)"
-				  color="var(--projects-color)" 
-					distance="100%" 
-					position="right" 
-					origin="bottom" 
-					volumen="4px" delay="calc({projectsDelay + 1.2} * var(--transition-time))" />
-				Projects
-			</h1>
+
+{#if animationDone}
+	<section class="projects">
+		<div class="projects-wrapper">
+			<div class="header">
+				<h1 class="title">
+					<Line
+					  time="var(--transition-time)"
+					  color="var(--projects-color)" 
+						distance="100%" 
+						position="bottom" 
+						origin="left" 
+						volumen="4px" delay="calc({0.6} * var(--transition-time))" />
+					<Line
+					  time="var(--transition-time)"
+					  color="var(--projects-color)" 
+						distance="100%" 
+						position="right" 
+						origin="bottom" 
+						volumen="4px" delay="calc({1.2} * var(--transition-time))" />
+					Projects
+				</h1>
+			</div>
+			<div class="grid">
+				{#each cards as card, i}
+					<ProjectsCard animationDelay={(i + 1) * 100} />
+				{/each}
+			</div>
 		</div>
-		<div class="grid">
-			<ProjectsCard />
-			<ProjectsCard />
-			<ProjectsCard />
-			<ProjectsCard />
-			<ProjectsCard />
-		</div>
-	</div>
-</section>
+	</section>
+{/if}
 
 <style>
 	.projects {
