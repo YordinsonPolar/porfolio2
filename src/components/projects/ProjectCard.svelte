@@ -1,11 +1,13 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import Marco from '../common/Marco.svelte';
 	import Button from '../common/Button.svelte';
 
+	export let animationDelay = 0;
 	const tags = ['Svelte','MongoDB','JWT', "CSS", "HTML", "Javascript", "NodeJS"]
 </script>
 
-<div class="card">
+<div class="card" style={`--animation-delay: ${animationDelay}ms`}>
 	<Marco aboutDelay="1" color="var(--projects-color)"/>
 	<div class="card-wrapper">
 		<div class="img">
@@ -28,7 +30,6 @@
 				<div class="example-btn">
 					<Button label="Live Example" size="14px" color="var(--projects-color)"/>
 				</div>
-				
 			</div>
 		</div>
 	</div>
@@ -37,7 +38,23 @@
 <style>
 
 	.card {
+		--animation-delay: 0;
 		position: relative;
+		opacity: 0;
+		transform: translateX(-10px);
+		animation: vanish 300ms forwards;
+		animation-delay: var(--animation-delay);
+	}
+
+	@keyframes vanish {
+		from {
+			transform: translateX(-10px);
+			opacity: 0;
+		}
+		to {
+			transform: translateX(0);
+			opacity: 1;
+		}
 	}
 
 	.card .card-wrapper {
@@ -47,7 +64,7 @@
 	}
 
 	.card .card-wrapper:hover {
-		transform: scale(1.04);
+		transform: scale(1.02);
 	}
 
 	.card .card-wrapper .img {
