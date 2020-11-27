@@ -1,14 +1,13 @@
 <script>
-	import { onDestroy } from 'svelte';
 	import Projects from '../components/projects/Projects.svelte';
 	import About from '../components/about/About.svelte';
 	import BackToTheSection from '../components/BackToTheSection.svelte';
 
 	let active = "";
+	const animationDelay = 1500;
 
 	const setActive = (option) => active = option;
 
-	onDestroy(() => clearTimeout(deleySection));
 </script>
 
 <div class="container" class:active={active !== ""}>
@@ -26,7 +25,7 @@
 				<p>Check my projects</p>
 			</div>
 			{#if active === "projects"}
-				<Projects />
+				<Projects {animationDelay} />
 			{/if}
 		</div>
 	</section>
@@ -43,7 +42,7 @@
 				<p>Known about me</p>
 			</div>
 			{#if active === "about"}
-				<About />
+				<About {animationDelay} />
 			{/if}
 		</div>
 	</section>

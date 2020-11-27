@@ -4,7 +4,7 @@
 	import Marco from '../common/Marco.svelte';
 	import AboutMe from './AboutMe.svelte';
 
-	export let animationDelay = 1500;
+	export let animationDelay = 0;
 	let animationDone = false;
 
 	const lazyLodingImg = ({ target }) => {

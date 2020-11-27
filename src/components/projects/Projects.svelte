@@ -4,18 +4,18 @@
 	import ProjectsCard from './ProjectCard.svelte';
 	import Tools from './Tools.svelte';
 
-	const projectsDelay = 1500;
+	export let animationDelay = 0;
 	let animationDone = false;
 	let cardAnimation = false;
 	const cards = [1,2,3,4,5,6];
 
 	const introAnimationDone = setTimeout(()=>{
 		animationDone = true;
-	}, projectsDelay);
+	}, animationDelay);
 
 	const cardsDelay = setTimeout(()=>{
 		cardAnimation = true;
-	}, projectsDelay * 1.5);
+	}, animationDelay * 1.5);
 
 	onDestroy(() => {
 		clearTimeout(cardsDelay);
@@ -107,7 +107,6 @@
 
 	@media (max-width: 620px) {
 		.projects .header {
-			margin-top: -10px;
 			display: flex;
 			flex-direction: column;
 		}

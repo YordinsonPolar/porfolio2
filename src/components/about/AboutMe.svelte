@@ -132,7 +132,7 @@
 		}
 	}
 
-	@media (max-width: 620px) {
+	@media (max-width: 720px) {
 		.about-me {
 			margin-top: 90px;
 		}
