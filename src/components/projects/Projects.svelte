@@ -28,7 +28,7 @@
 	<section class="projects">
 		<div class="projects-wrapper">
 			<div class="header">
-				<h1 class="title">
+				<h2 class="title">
 					<Line
 					  time="var(--transition-time)"
 					  color="var(--projects-color)" 
@@ -44,7 +44,7 @@
 						origin="bottom" 
 						volumen="4px" delay="calc({1.2} * var(--transition-time))" />
 					Projects
-				</h1>
+				</h2>
 				<Tools />
 			</div>
 			<div class="grid">

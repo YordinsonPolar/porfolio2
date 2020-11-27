@@ -1,6 +1,7 @@
 <script>
 	import Projects from '../components/projects/Projects.svelte';
 	import About from '../components/about/About.svelte';
+	import Contact from '../components/contact/Contact.svelte';
 	import BackToTheSection from '../components/BackToTheSection.svelte';
 
 	let active = "";
@@ -11,7 +12,8 @@
 </script>
 
 <div class="container" class:active={active !== ""}>
-	<BackToTheSection bind:active />
+	<Contact />
+	<!-- <BackToTheSection bind:active />
 	<section class="section">
 		<div 
 			on:click|self={() => setActive("projects")}
@@ -59,7 +61,7 @@
 				<p>Say me hola!</p>
 			</div>
 		</div>
-	</section>
+	</section> -->
 </div>
 
 <style>
