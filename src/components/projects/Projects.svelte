@@ -6,14 +6,21 @@
 
 	const projectsDelay = 1500;
 	let animationDone = false;
-
+	let cardAnimation = false;
 	const cards = [1,2,3,4,5,6];
 
-	const delay = setTimeout(()=>{
+	const introAnimationDone = setTimeout(()=>{
 		animationDone = true;
 	}, projectsDelay);
 
-	onDestroy(() => clearTimeout(delay));
+	const cardsDelay = setTimeout(()=>{
+		cardAnimation = true;
+	}, projectsDelay * 1.5);
+
+	onDestroy(() => {
+		clearTimeout(cardsDelay);
+		clearTimeout(introAnimationDone);
+});
 </script>
 
 
@@ -48,9 +55,11 @@
 					position="left" 
 					origin="top" 
 					volumen="4px" delay="calc({0.6} * var(--transition-time))" />
-				{#each cards as card, i}
-					<ProjectsCard animationDelay={(i + 1) * 300} />
-				{/each}
+					{#if cardAnimation}
+						{#each cards as card, i}
+							<ProjectsCard animationDelay={(i + 1) * 300} />
+						{/each}
+					{/if}
 			</div>
 		</div>
 	</section>
@@ -62,7 +71,7 @@
 		font-size: var(--title-size);
 		position: relative;
 		width: 100%;
-		min-height: 100%;
+		min-height: 100vh;
 		display: grid;
 		align-items: center;
 		padding: 80px 0;
@@ -93,6 +102,7 @@
 		grid-gap: 50px;
 		padding-left: 25px;
 		padding-top: 50px;
+		min-height: 100vh;
 	}
 
 </style>
