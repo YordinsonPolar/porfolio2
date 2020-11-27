@@ -1,9 +1,14 @@
 <script>
 	import Line from '../common/Line.svelte';
 	export let color;
+	export let position = "left";
 </script>
 
-<span class="marco">
+<span 
+	class="marco" 
+	class:left={position === "left"} 
+	class:right={position === "right"} 
+	> 
 	<Line
 	  time="var(--transition-time)"
 	  color={color} 
@@ -44,6 +49,13 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		transform: translate(-25px, 25px);
+	}
+
+	.left {
+		transform: translate(-25px, 25px);		
+	}
+
+	.right {
+		transform: translate(25px, 25px);
 	}
 </style>
