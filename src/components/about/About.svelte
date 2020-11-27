@@ -54,7 +54,7 @@
 		align-items: center;
 		height: 100vh;
 		padding-bottom: 40px;
-		background: rgba(0,0,0, .5);
+		background: var(--section-bg);
 	}
 
 	.about-wrapper {

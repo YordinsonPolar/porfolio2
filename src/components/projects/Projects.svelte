@@ -75,7 +75,7 @@
 		display: grid;
 		align-items: center;
 		padding: 80px 0;
-		background: rgba(0,0,0, .5);
+		background: var(--section-bg);
 	}
 
 	.projects .projects-wrapper {

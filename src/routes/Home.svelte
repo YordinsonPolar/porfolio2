@@ -144,6 +144,11 @@
 		background-color: rgba(0,0,0, .3);
 	}
 
+	/*disabled hover on active section */
+	.container.active .section:hover .clip::before {
+		background-color: inherit;
+	}
+
 	/* --------------- TITLE ----------------- */
 
 	.title {
