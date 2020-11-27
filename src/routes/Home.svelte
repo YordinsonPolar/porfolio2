@@ -205,20 +205,18 @@
 		transform: translateY(200%);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 520px) {
 		.container .clip.projects-clip .title  {
 	    left: 10px;
-	    bottom: 450px;
+	    bottom: 400px;
 		 }
 
 		.container .clip.about-clip .title {
 		 	right: 12%;
 		 	top: 50px;
 		 }
-	}
 
-	@media (max-width: 520px) {
-		.container .title {
+		 .container .title {
 			font-size: 1.3rem;
 		}
 
@@ -226,5 +224,6 @@
 			font-size: .9rem;
 		}
 	}
+
 
 </style>
