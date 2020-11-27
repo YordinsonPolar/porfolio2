@@ -12,38 +12,47 @@
 </script>
 
 <section class="contact">
-	<h2 class="title">contact</h2>
 	<div class="sections">
 		<div class="form">
-			<form>
-				<Line
-				  time="var(--transition-time)"
-				  color="var(--contact-color)" 
-					distance="100%" 
-					position="top" 
-					origin="right" 
-					volumen="4px" delay="calc(1.2 * var(--transition-time))" />
+			<h2 class="title">contact</h2>
+			<div class="line-right">
 				<Line
 				  time="var(--transition-time)"
 				  color="var(--contact-color)" 
 					distance="100%" 
 					position="left" 
 					origin="top" 
+					volumen="4px" delay="calc(1.2 * var(--transition-time))" />
+			</div>
+			<form>
+				<Line
+				  time="var(--transition-time)"
+				  color="var(--contact-color)" 
+					distance="100%" 
+					position="top" 
+					origin="center" 
 					volumen="4px" delay="calc(2.2 * var(--transition-time))" />
 				<Line
 				  time="var(--transition-time)"
 				  color="var(--contact-color)" 
-					distance="155px" 
-					position="bottom" 
-					origin="left" 
+					distance="100%" 
+					position="left" 
+					origin="top" 
 					volumen="4px" delay="calc(3.2 * var(--transition-time))" />
 				<Line
 				  time="var(--transition-time)"
 				  color="var(--contact-color)" 
-					distance="188px" 
+					distance="255px" 
+					position="bottom" 
+					origin="left" 
+					volumen="4px" delay="calc(4.2 * var(--transition-time))" />
+				<Line
+				  time="var(--transition-time)"
+				  color="var(--contact-color)" 
+					distance="124px" 
 					position="right" 
 					origin="top" 
-					volumen="4px" delay="calc(1.2 * var(--transition-time))" />
+					volumen="4px" delay="calc(3.2 * var(--transition-time))" />
 
 				<div class="custom-input name">
 					<input type="text" name="name" bind:value={values.name} placeholder="Name" />
@@ -95,6 +104,7 @@
 		margin: 0 auto;
 		display: grid;
 		align-items: center;
+		height: 100%;
 		grid-template-columns: 15fr 2fr 10fr;
 	}
 
@@ -107,10 +117,11 @@
 	}
 	.contact .sections .form .custom-input textarea,
 	.contact .sections .form .custom-input input {
+		outline: none;
 		padding: 10px 20px;
 		font-size: 1.3rem;
 		width: 100%;
-		background: #dc9bf7;
+		background: #a993ec9e;
 		border: none;
 		border-radius: var(--border-radius);
 		color: #fff;
@@ -131,14 +142,14 @@
 		grid-column: 1 / 3;
 	}
 
-
 	.contact .sections .form .button {
 		position: absolute;
 		bottom: -30px;
-		left: 150px;
+		left: 250px;
 		z-index: 5;
+		opacity: 0;
 		animation: vanish var(--transition-time) ease-in-out forwards;
-		animation-delay: var(--delay);
+		animation-delay: 2s;
 	}
 
 	@keyframes vanish {
@@ -155,6 +166,13 @@
 	.line {
 		position: relative;
 		height: 4px;
+	}
+
+	.line-right {
+		position: relative;
+		width: 4px;
+		height: 50px;
+		margin: 0 auto;
 	}
 
 	.contact .sections .map {

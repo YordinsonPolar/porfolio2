@@ -14,7 +14,7 @@
 		color: #fff;
 		font-weight: 500;
 		font-size: var(--size);
-		padding: 6px 30px;
+		padding: 8px 35px;
 		border: calc( var(--size) / 5) solid var(--color);
 		transform: skewX(-20deg);
 		cursor: pointer;
