@@ -31,39 +31,66 @@
 					distance="100%" 
 					position="top" 
 					origin="center" 
-					volumen="4px" delay="calc(2.2 * var(--transition-time))" />
+					volumen="4px" delay="calc(2 * var(--transition-time))" />
 				<Line
 				  time="var(--transition-time)"
 				  color="var(--contact-color)" 
 					distance="100%" 
 					position="left" 
 					origin="top" 
-					volumen="4px" delay="calc(3.2 * var(--transition-time))" />
+					volumen="4px" delay="calc(2.8 * var(--transition-time))" />
 				<Line
 				  time="var(--transition-time)"
 				  color="var(--contact-color)" 
 					distance="255px" 
 					position="bottom" 
 					origin="left" 
-					volumen="4px" delay="calc(4.2 * var(--transition-time))" />
+					volumen="4px" delay="calc(3.6 * var(--transition-time))" />
 				<Line
 				  time="var(--transition-time)"
 				  color="var(--contact-color)" 
 					distance="124px" 
 					position="right" 
 					origin="top" 
-					volumen="4px" delay="calc(3.2 * var(--transition-time))" />
+					volumen="4px" delay="calc(2.8 * var(--transition-time))" />
 
 				<div class="custom-input name">
+					<span class="line-input">
+						<Line
+						  time="var(--transition-time)"
+						  color="var(--contact-color)" 
+							distance="100%" 
+							position="bottom" 
+							origin="left" 
+							volumen="4px" delay="calc(2.8 * var(--transition-time))" />
+					</span>
 					<input type="text" name="name" bind:value={values.name} placeholder="Name" />
 				</div>
 				<div class="custom-input email">
 					<input type="text" name="email" bind:value={values.email} placeholder="Email" />
 				</div>
 				<div class="custom-input subject">
+					<span class="line-input">
+						<Line
+						  time="var(--transition-time)"
+						  color="var(--contact-color)" 
+							distance="100%" 
+							position="bottom" 
+							origin="left" 
+							volumen="4px" delay="calc(3 * var(--transition-time))" />
+					</span>
 					<input type="text" name="subject" bind:value={values.subject} placeholder="Subject" />
 				</div>
 				<div class="custom-input message">
+					<span class="line-input">
+						<Line
+						  time="var(--transition-time)"
+						  color="var(--contact-color)" 
+							distance="100%" 
+							position="bottom" 
+							origin="left" 
+							volumen="4px" delay="calc(3.2 * var(--transition-time))" />
+					</span>
 					<textarea type="text" name="message" bind:value={values.message} placeholder="Message" />
 				</div>
 				<div class="button">
@@ -78,7 +105,7 @@
 					distance="100%" 
 					position="bottom" 
 					origin="left" 
-					volumen="4px" delay="calc(2.2 * var(--transition-time))" />
+					volumen="4px" delay="calc(3.6 * var(--transition-time))" />
 			</span>
 		<div class="map">
 			<Marco color="var(--contact-color)"  position="right" />
@@ -96,7 +123,10 @@
 
 	.contact .title {
 		text-align: center;
+		width: 80%;
+		margin: 0 auto;
 		font-size: var(--title-size);
+		border-bottom: 1px solid var(--contact-color);
 	}
 
 	.contact .sections {
@@ -114,6 +144,13 @@
 		display: grid;
 		grid-gap: 15px;
 		grid-template-columns: repeat(2,1fr);
+	}
+
+	.contact .sections .form .custom-input {
+		position: relative;
+		opacity: 0;
+		animation: vanish var(--transition-time) ease-in-out forwards;
+		animation-delay: 1s;
 	}
 	.contact .sections .form .custom-input textarea,
 	.contact .sections .form .custom-input input {
@@ -149,7 +186,7 @@
 		z-index: 5;
 		opacity: 0;
 		animation: vanish var(--transition-time) ease-in-out forwards;
-		animation-delay: 2s;
+		animation-delay: 1800ms;
 	}
 
 	@keyframes vanish {
@@ -173,6 +210,21 @@
 		width: 4px;
 		height: 50px;
 		margin: 0 auto;
+	}
+
+	.line-input {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 25px;
+		height: 4px;
+		margin-left: -38px;
+		transform: translateY(-50%)
+	}
+
+	.message .line-input {
+		top: 20px;
+		transform: translateY(0);
 	}
 
 	.contact .sections .map {
