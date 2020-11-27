@@ -98,7 +98,7 @@
 	.grid {
 		position: relative;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax( 320px,1fr));
+		grid-template-columns: repeat(auto-fill, minmax( 280px,1fr));
 		grid-gap: 50px;
 		padding-left: 25px;
 		padding-top: 50px;
@@ -107,6 +107,7 @@
 
 	@media (max-width: 620px) {
 		.projects .header {
+			width: 80%;
 			display: flex;
 			flex-direction: column;
 		}

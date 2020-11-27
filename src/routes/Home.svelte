@@ -12,8 +12,8 @@
 </script>
 
 <div class="container" class:active={active !== ""}>
-	<Contact />
-	<!-- <BackToTheSection bind:active />
+
+	<BackToTheSection bind:active />
 	<section class="section">
 		<div 
 			on:click|self={() => setActive("projects")}
@@ -60,8 +60,11 @@
 				<h2>Contact</h2>
 				<p>Say me hola!</p>
 			</div>
+			{#if active === "contact"}
+				<Contact {animationDelay} />
+			{/if}
 		</div>
-	</section> -->
+	</section>
 </div>
 
 <style>

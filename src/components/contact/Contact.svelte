@@ -39,8 +39,12 @@
 
 <style>
 	.contact {
+		display: grid;
+		align-items: center;
 		width: 100%;
-		height: 100vh;
+		min-height: 100vh;
+		height: 100%;
+		margin-bottom: 50px;
 	}
 
 	.contact .sections {
@@ -78,6 +82,23 @@
 		to {
 			transform: translate(0);
 			opacity: 1;
+		}
+	}
+
+	@media (max-width: 700px) {
+		.contact .sections {
+			display: flex;
+			width: 80%;
+			flex-direction: column;
+			margin-top: 50px;
+		}
+
+		.contact .sections .map img {
+			width: 400px;
+		}
+
+		.contact .sections .map {
+			display: none;
 		}
 	}
 </style>

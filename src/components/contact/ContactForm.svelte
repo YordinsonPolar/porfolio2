@@ -38,7 +38,7 @@
 		<Line
 		  time="var(--transition-time)"
 		  color="var(--contact-color)" 
-			distance="255px" 
+			distance="102px" 
 			position="bottom" 
 			origin="left" 
 			volumen="4px" delay="calc(3.6 * var(--transition-time))" />
@@ -112,13 +112,13 @@
 		border-bottom: 1px solid var(--contact-color);
 	}
 
-
 	.line-right {
 		position: relative;
 		width: 4px;
 		height: 50px;
 		margin: 0 auto;
 	}
+
 	.form .custom-input {
 		position: relative;
 		opacity: 0;
@@ -166,7 +166,7 @@
 	.form .button {
 		position: absolute;
 		bottom: -30px;
-		left: 250px;
+		left: 100px;
 		z-index: 5;
 		opacity: 0;
 		animation: vanish var(--transition-time) ease-in-out forwards;
@@ -186,6 +186,14 @@
 		to {
 			transform: translate(0);
 			opacity: 1;
+		}
+	}
+
+
+	@media (max-width: 768px) {
+		.form form {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 </style>
