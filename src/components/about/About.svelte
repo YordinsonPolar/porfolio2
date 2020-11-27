@@ -67,6 +67,8 @@
 	.perfil {
 		position: relative;
 		height: 80%;
+		width: 100%;
+		margin-bottom: 100px;
 	}
 
 	.img {
@@ -86,13 +88,12 @@
 		height: 4px;
 	}
 
-	@media (max-width: 620px) {
+	@media (max-width: 768px) {
 		.about {
 			height: 100%;
 		}
 
 		.about-wrapper {
-			margin-top: 100px;
 			width: 80%;
 			display: flex;
 			flex-direction: column;
