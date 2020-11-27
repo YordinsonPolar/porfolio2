@@ -1,0 +1,191 @@
+<script>
+	import Button from '../common/Button.svelte';
+	import Line from '../common/Line.svelte';
+	const values = {
+		name: "",
+		email: "",
+		subject: "",
+		message: "",
+	}
+</script>
+
+<div class="form">
+		<h2 class="title">contact</h2>
+		<div class="line-right">
+			<Line
+			  time="var(--transition-time)"
+			  color="var(--contact-color)" 
+				distance="100%" 
+				position="left" 
+				origin="top" 
+				volumen="4px" delay="calc(1.2 * var(--transition-time))" />
+		</div>
+	<form>
+		<Line
+		  time="var(--transition-time)"
+		  color="var(--contact-color)" 
+			distance="100%" 
+			position="top" 
+			origin="center" 
+			volumen="4px" delay="calc(2 * var(--transition-time))" />
+		<Line
+		  time="var(--transition-time)"
+		  color="var(--contact-color)" 
+			distance="100%" 
+			position="left" 
+			origin="top" 
+			volumen="4px" delay="calc(2.8 * var(--transition-time))" />
+		<Line
+		  time="var(--transition-time)"
+		  color="var(--contact-color)" 
+			distance="255px" 
+			position="bottom" 
+			origin="left" 
+			volumen="4px" delay="calc(3.6 * var(--transition-time))" />
+		<Line
+		  time="var(--transition-time)"
+		  color="var(--contact-color)" 
+			distance="124px" 
+			position="right" 
+			origin="top" 
+			volumen="4px" delay="calc(2.8 * var(--transition-time))" />
+
+		<div class="custom-input name">
+			<span class="line-input">
+				<Line
+				  time="var(--transition-time)"
+				  color="var(--contact-color)" 
+					distance="100%" 
+					position="bottom" 
+					origin="left" 
+					volumen="4px" delay="calc(2.8 * var(--transition-time))" />
+			</span>
+			<input type="text" name="name" bind:value={values.name} placeholder="Name" />
+		</div>
+		<div class="custom-input email">
+			<input type="text" name="email" bind:value={values.email} placeholder="Email" />
+		</div>
+		<div class="custom-input subject">
+			<span class="line-input">
+				<Line
+				  time="var(--transition-time)"
+				  color="var(--contact-color)" 
+					distance="100%" 
+					position="bottom" 
+					origin="left" 
+					volumen="4px" delay="calc(3 * var(--transition-time))" />
+			</span>
+			<input type="text" name="subject" bind:value={values.subject} placeholder="Subject" />
+		</div>
+		<div class="custom-input message">
+			<span class="line-input">
+				<Line
+				  time="var(--transition-time)"
+				  color="var(--contact-color)" 
+					distance="100%" 
+					position="bottom" 
+					origin="left" 
+					volumen="4px" delay="calc(3.2 * var(--transition-time))" />
+			</span>
+			<textarea type="text" name="message" bind:value={values.message} placeholder="Message" />
+		</div>
+		<div class="button">
+			<Button label="Send email" size="25px" color="var(--contact-color)"/>
+		</div>
+	</form>
+</div>
+
+<style>
+	.form form {
+		padding: 40px;
+		position: relative;
+		display: grid;
+		grid-gap: 15px;
+		grid-template-columns: repeat(2,1fr);
+	}
+
+	.form .title {
+		text-align: center;
+		width: 80%;
+		margin: 0 auto;
+		font-size: var(--title-size);
+		border-bottom: 1px solid var(--contact-color);
+	}
+
+
+	.line-right {
+		position: relative;
+		width: 4px;
+		height: 50px;
+		margin: 0 auto;
+	}
+	.form .custom-input {
+		position: relative;
+		opacity: 0;
+		animation: vanish var(--transition-time) ease-in-out forwards;
+		animation-delay: 1s;
+	}
+
+	.line-input {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 25px;
+		height: 4px;
+		margin-left: -38px;
+		transform: translateY(-50%)
+	}
+
+	.form .custom-input textarea,
+	.form .custom-input input {
+		outline: none;
+		padding: 10px 20px;
+		font-size: 1.3rem;
+		width: 100%;
+		background: #a993ec9e;
+		border: none;
+		border-radius: var(--border-radius);
+		color: #fff;
+	}
+
+	.form .custom-input textarea {
+		resize: none;
+		height: 150px;
+		margin-bottom: 20px;
+	}
+
+	::placeholder {
+		color: rgba(255,255,255, .7);
+	}
+
+	.form .message,
+	.form .subject {
+		grid-column: 1 / 3;
+	}
+
+	.form .button {
+		position: absolute;
+		bottom: -30px;
+		left: 250px;
+		z-index: 5;
+		opacity: 0;
+		animation: vanish var(--transition-time) ease-in-out forwards;
+		animation-delay: 1800ms;
+	}
+
+	.message .line-input {
+		top: 20px;
+		transform: translateY(0);
+	}
+
+	@keyframes vanish {
+		from {
+			transform: translate(-5%);
+			opacity: 0;
+		}
+		to {
+			transform: translate(0);
+			opacity: 1;
+		}
+	}
+</style>
