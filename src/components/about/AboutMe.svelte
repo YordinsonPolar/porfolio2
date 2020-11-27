@@ -1,7 +1,6 @@
 <script>
 	import Line from '../common/Line.svelte';
 	import Button from '../common/Button.svelte';
-	export let aboutDelay;
 </script>
 
 <div class="about-me">
@@ -11,21 +10,21 @@
 		distance="100%" 
 		position="left" 
 		origin="center" 
-		volumen="4px" delay="calc({aboutDelay + 1.6} * var(--transition-time))"/>
+		volumen="4px" delay="calc( 1.6 * var(--transition-time))"/>
 	<Line
 	  time="var(--transition-time)"
 	  color="var(--about-color)" 
 		distance="55px" 
 		position="top" 
 		origin="left" 
-		volumen="4px" delay="calc({aboutDelay + 2}* var(--transition-time))" />
+		volumen="4px" delay="calc( 2 * var(--transition-time))" />
 	<Line
 	  time="var(--transition-time)"
 	  color="var(--about-color)" 
 		distance="103px" 
 		position="bottom" 
 		origin="left" 
-		volumen="4px" delay="calc({aboutDelay + 2} * var(--transition-time))" />
+		volumen="4px" delay="calc( 2 * var(--transition-time))" />
 
 	<h1>About</h1>
 	<div>
@@ -36,7 +35,7 @@
 				distance="100%" 
 				position="bottom" 
 				origin="left" 
-				volumen="4px" delay="calc( {aboutDelay + 2} * var(--transition-time))" />
+				volumen="4px" delay="calc( 2 * var(--transition-time))" />
 		</span>
 		<p class="sinopsis">
 			I´m Yordinson Polar a self-taught programmer based in Caracas-Venezuela.
@@ -57,7 +56,7 @@
 
 <style>
 	.about-me {
-		--timeDelay: 7;
+		--timeDelay: 3;
 		--delay: calc( var(--timeDelay) * var(--transition-time));
 		position: relative;
 		padding: 0 80px;

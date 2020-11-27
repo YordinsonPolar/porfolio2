@@ -1,6 +1,5 @@
 <script>
 	import Line from '../common/Line.svelte';
-	export let aboutDelay;
 	export let color;
 </script>
 
@@ -12,7 +11,7 @@
 		position="left" 
 		origin="bottom" 
 		volumen="4px"
-		delay="calc({aboutDelay} * var(--transition-time))" />
+		/>
 	<Line
 	  time="var(--transition-time)"
 	  color={color} 
@@ -20,21 +19,21 @@
 		position="bottom" 
 		origin="left" 
 		volumen="4px"
-		delay="calc({aboutDelay} * var(--transition-time))"/>
+		/>
 	<Line
 	  time="var(--transition-time)"
 	  color={color} 
 		distance="100%" 
 		position="right" 
 		origin="bottom" 
-		volumen="4px" delay="calc({aboutDelay + .6} * var(--transition-time))" />
+		volumen="4px" delay="calc(0.6 * var(--transition-time))" />
 	<Line
 	  time="var(--transition-time)"
 	  color={color}
 		distance="100%" 
 		position="top" 
 		origin="left" 
-		volumen="4px" delay="calc({aboutDelay + .6} * var(--transition-time))" />
+		volumen="4px" delay="calc(0.6 * var(--transition-time))" />
 </span>
 
 

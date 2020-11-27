@@ -1,39 +1,48 @@
 <script>
+	import { onDestroy } from 'svelte';
 	import Line from '../../components/common/Line.svelte';
 	import Marco from '../common/Marco.svelte';
 	import AboutMe from './AboutMe.svelte';
+
+	export let animationDelay = 1500;
+	let animationDone = false;
 
 	const lazyLodingImg = ({ target }) => {
 		target.style.transform = "translateX(0)"
 		target.style.opacity = 1
 	};
 
-	const aboutDelay = 4;
+	const introAnimationDone = setTimeout(()=>{
+		animationDone = true;
+	}, animationDelay);
+
+	onDestroy(() => clearTimeout(introAnimationDone));
 </script>
 
-
-<section class="about">
-	<div class="about-wrapper">
-		<div class="perfil">
-			<Marco {aboutDelay} color="var(--about-color)"/>
-			<img 
-				class="img" 
-				on:load={lazyLodingImg} 
-				src="/images/about.jpg" 
-				alt="Yordinson Polar">
+{#if animationDone}
+	<section class="about">
+		<div class="about-wrapper">
+			<div class="perfil">
+				<Marco color="var(--about-color)"/>
+				<img 
+					class="img" 
+					on:load={lazyLodingImg} 
+					src="/images/about.jpg" 
+					alt="Yordinson Polar">
+			</div>
+			<span class="line">
+				<Line
+				  time="var(--transition-time)"
+				  color="var(--about-color)" 
+					distance="100%" 
+					position="bottom" 
+					origin="left" 
+					volumen="4px" delay="calc(1.2 * var(--transition-time))" />
+			</span>
+			<AboutMe />
 		</div>
-		<span class="line">
-			<Line
-			  time="var(--transition-time)"
-			  color="var(--about-color)" 
-				distance="100%" 
-				position="bottom" 
-				origin="left" 
-				volumen="4px" delay="calc({aboutDelay + 1.2} * var(--transition-time))" />
-		</span>
-		<AboutMe {aboutDelay} />
-	</div>
-</section>
+	</section>
+{/if}
 
 
 

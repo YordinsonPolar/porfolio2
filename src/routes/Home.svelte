@@ -60,7 +60,7 @@
 				<p>Say me hola!</p>
 			</div>
 		</div>
-	<!-- </section> -->
+	</section>
 </div>
 
 <style>
