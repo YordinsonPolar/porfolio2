@@ -25,6 +25,13 @@
 		position="top" 
 		origin="left" 
 		volumen="4px" delay="calc({2.2} * var(--transition-time))" />
+		<Line
+	  time="var(--transition-time)"
+	  color="var(--projects-color)" 
+		distance="100%" 
+		position="left" 
+		origin="top" 
+		volumen="4px" delay="calc({2.2} * var(--transition-time))" />
 	<div class="icon" data-title="Firebase">
 		<Firebase width={iconSize} height={iconSize} />
 	</div>
@@ -107,6 +114,7 @@
 		flex-flow: wrap;
 		padding: 5px 5px;
 		position: relative;
+		margin-left: -4px;
 	}
 
 	.icon {
@@ -170,4 +178,10 @@
 
 	/* the icon color hover works only on global */
 	
+	@media (max-width: 620px) {
+		.tools {
+			margin-top: -4px;
+			margin-left: 0;
+		}
+	}	
 </style>

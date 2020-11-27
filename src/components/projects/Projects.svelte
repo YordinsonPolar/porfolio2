@@ -105,4 +105,12 @@
 		min-height: 100vh;
 	}
 
+	@media (max-width: 620px) {
+		.projects .header {
+			margin-top: -10px;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
 </style>
