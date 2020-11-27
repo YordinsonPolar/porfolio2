@@ -1,18 +1,19 @@
 <script>
+	import { onDestroy } from 'svelte';
 	import Projects from '../components/projects/Projects.svelte';
 	import About from '../components/about/About.svelte';
 	import BackToTheSection from '../components/BackToTheSection.svelte';
 
 	let active = "";
-	let loading = true;
 
 	const setActive = (option) => active = option;
+
+	onDestroy(() => clearTimeout(deleySection));
 </script>
 
 <div class="container" class:active={active !== ""}>
-	<Projects />
-	<!-- <BackToTheSection bind:active bind:loading /> -->
-	<!-- <section class="section">
+	<BackToTheSection bind:active />
+	<section class="section">
 		<div 
 			on:click|self={() => setActive("projects")}
 			href="/" 
@@ -58,7 +59,7 @@
 				<h2>Contact</h2>
 				<p>Say me hola!</p>
 			</div>
-		</div> -->
+		</div>
 	<!-- </section> -->
 </div>
 

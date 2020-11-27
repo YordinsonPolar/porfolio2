@@ -4,7 +4,7 @@
 	import ProjectsCard from './ProjectCard.svelte';
 	import Tools from './Tools.svelte';
 
-	const projectsDelay = 0;
+	const projectsDelay = 1500;
 	let animationDone = false;
 
 	const cards = [1,2,3,4,5,6];
