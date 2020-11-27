@@ -39,6 +39,12 @@ button {
 	outline: none;
 }
 
+/* This icon color work for tools */
+.icon:hover .icon-color {
+	fill: var(--projects-color);
+}
+
+
 @media (max-width: 1024px) {
 	html {
 		font-size: 14px;

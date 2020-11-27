@@ -147,11 +147,13 @@
     font-size: 13px;
     bottom: -8px;
     left: 50%;
-    font-weight: 600;
+    font-weight: 700;
     opacity: 0;
     transform: translate(-50%, 100%);
     visibility: none;
-    transition: 
+    pointer-events: none;
+    transition:
+    	var(--transition-time) color,
     	var(--transition-time) opacity,
     	var(--transition-time) visibility;
 	}
@@ -166,7 +168,6 @@
 		border-color: var(--projects-color);
 	}
 
-	.icon-color {
-		fill: red;
-	}
+	/* the icon color hover works only on global */
+	
 </style>
