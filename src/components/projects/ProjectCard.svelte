@@ -42,7 +42,7 @@
 		position: relative;
 		opacity: 0;
 		transform: translateX(-10px);
-		animation: vanish 300ms forwards;
+		animation: vanish 700ms forwards;
 		animation-delay: var(--animation-delay);
 	}
 

@@ -2,8 +2,9 @@
 	import { onDestroy } from 'svelte';
 	import Line from '../common/Line.svelte';
 	import ProjectsCard from './ProjectCard.svelte';
+	import Tools from './Tools.svelte';
 
-	const projectsDelay = 5000;
+	const projectsDelay = 0;
 	let animationDone = false;
 
 	const cards = [1,2,3,4,5,6];
@@ -37,10 +38,18 @@
 						volumen="4px" delay="calc({1.2} * var(--transition-time))" />
 					Projects
 				</h1>
+				<Tools />
 			</div>
 			<div class="grid">
+				<Line
+				  time="var(--transition-time)"
+				  color="var(--projects-color)" 
+					distance="100%" 
+					position="left" 
+					origin="top" 
+					volumen="4px" delay="calc({0.6} * var(--transition-time))" />
 				{#each cards as card, i}
-					<ProjectsCard animationDelay={(i + 1) * 100} />
+					<ProjectsCard animationDelay={(i + 1) * 300} />
 				{/each}
 			</div>
 		</div>
@@ -66,6 +75,10 @@
 		height: 100%;
 	}
 
+	.projects .header {
+		display: flex;
+	}
+
 	.projects .header .title {
 		position: relative;
 		display: inline;
@@ -74,10 +87,12 @@
 	}
 
 	.grid {
+		position: relative;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax( 320px,1fr));
 		grid-gap: 50px;
-		margin-top: 50px;
+		padding-left: 25px;
+		padding-top: 50px;
 	}
 
 </style>
