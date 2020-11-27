@@ -190,7 +190,7 @@
 	}
 
 
-	@media (max-width: 768px) {
+	@media (max-width: 520px) {
 		.form form {
 			display: flex;
 			flex-direction: column;

@@ -111,6 +111,11 @@
 			display: flex;
 			flex-direction: column;
 		}
+
+		.grid {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
 </style>
