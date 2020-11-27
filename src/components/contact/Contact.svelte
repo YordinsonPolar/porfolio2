@@ -45,6 +45,7 @@
 		min-height: 100vh;
 		height: 100%;
 		margin-bottom: 50px;
+		background: var(--section-bg);
 	}
 
 	.contact .sections {
