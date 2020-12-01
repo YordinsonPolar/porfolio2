@@ -79,7 +79,7 @@
 				<p>Known about me</p>
 			</div>
 			{#if active === "about"}
-				<About {animationDelay} />
+				<About bind:active {animationDelay} />
 			{/if}
 		</div>
 	</section>

@@ -1,6 +1,19 @@
 <script>
+	import { onDestroy } from 'svelte';
 	import Line from '../common/Line.svelte';
 	import Button from '../common/Button.svelte';
+
+	export let active;
+
+	const timeout = null;
+	const changeToProjectsSection = () => {
+		active = "";
+		setTimeout(() => {
+			active = "projects";
+		},1000)
+	};
+
+	onDestroy(() => clearTimeout(timeout))
 </script>
 
 <div class="about-me">
@@ -49,6 +62,7 @@
 	</div>
 	
 	<div 
+		on:click={changeToProjectsSection}
 		class="projects-button">
 		<Button label="Projects" size="25px" color="var(--about-color)" />	
 	</div>

@@ -4,6 +4,7 @@
 	import Marco from '../common/Marco.svelte';
 	import AboutMe from './AboutMe.svelte';
 
+	export let active;
 	export let animationDelay = 0;
 	let animationDone = false;
 
@@ -39,7 +40,7 @@
 					origin="left" 
 					volumen="4px" delay="calc(1.2 * var(--transition-time))" />
 			</span>
-			<AboutMe />
+			<AboutMe bind:active />
 		</div>
 	</section>
 {/if}
