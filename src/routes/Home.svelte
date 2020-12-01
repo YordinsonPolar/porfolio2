@@ -210,13 +210,39 @@
 		transition: transform var(--transition-time);
 	}
 
-	.title::before {
+	.projects-clip .title::before {
 		position: absolute;
 		top: 0;
 		left: 0;
 		content: "";
 		width: 5px;
-		background: red;
+		background: var(--projects-color);
+		height: 0;
+		transition: 
+			height var(--transition-time),
+			transform var(--transition-time);
+	}
+
+	.about-clip .title::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+		width: 5px;
+		background: var(--about-color);
+		height: 0;
+		transition: 
+			height var(--transition-time),
+			transform var(--transition-time);
+	}
+
+	.contact-clip .title::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: "";
+		width: 5px;
+		background: var(--contact-color);
 		height: 0;
 		transition: 
 			height var(--transition-time),
