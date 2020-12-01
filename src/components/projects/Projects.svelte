@@ -106,6 +106,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: #b9b9b9;
+    animation: vanish calc( 2 * var(--transition-time)) ease-out;
 	}
 
 	.projects .header .title {
@@ -113,7 +114,19 @@
 		display: inline;
 		padding: 20px 35px 20px 0;
 		font-size: var(--title-size);
+		animation: vanish var(--transition-time) ease-out;
 	}
+
+		@keyframes vanish {
+			from {
+				transform: translate(-5%);
+				opacity: 0;
+			}
+			to {
+				transform: translate(0);
+				opacity: 1;
+			}
+		}
 
 	.grid {
 		position: relative;
