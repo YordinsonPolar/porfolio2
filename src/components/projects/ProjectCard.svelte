@@ -3,6 +3,11 @@
 	import Marco from '../common/Marco.svelte';
 	import Button from '../common/Button.svelte';
 
+	export let title;
+	export let description;
+	export let tools;
+	export let imageUrl;
+
 	export let animationDelay = 0;
 	const tags = ['Svelte','MongoDB','JWT', "CSS", "HTML", "Javascript", "NodeJS"]
 </script>
@@ -11,19 +16,17 @@
 	<Marco aboutDelay="1" color="var(--projects-color)"/>
 	<div class="card-wrapper">
 		<div class="img">
-			<img src="/images/about.jpg" alt="poll">
+			<img src={imageUrl} alt={title}>
 		</div>
 		<div class="info-section">
 			<div class="bg-effect"></div>
 			<div class="info-section-wrapper">
-				<h2 class="title">Poll App</h2>
+				<h2 class="title">{title}</h2>
 				<h6 class="description-title">Description</h6>
-				<p class="description">
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat aut similique laborum dolorem asperiores quo veniam fugit velit molestiae assumenda veritatis ratione reiciendis corrupti rerum, officia animi magni vitae, amet.
-				</p>
+				<p class="description">{description}</p>
 				<div class="tags">
 					<p class="tags-title">Tools: </p>
-					{#each tags as tag }
+					{#each tools as tag }
 						<p class="tag">{tag}</p>
 					{/each}
 				</div>
