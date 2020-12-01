@@ -45,6 +45,11 @@ button {
 	fill: var(--projects-color);
 }
 
+/* This work for github icon hover */
+.github-icon:hover .icon {
+	fill: #fff;
+}
+
 
 @media (max-width: 1024px) {
 	html {

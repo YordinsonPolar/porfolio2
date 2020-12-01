@@ -2,6 +2,7 @@
 	import { fade } from 'svelte/transition';
 	import Marco from '../common/Marco.svelte';
 	import Button from '../common/Button.svelte';
+	import Github from '../../icons/github.svg';
 
 	export let title;
 	export let description;
@@ -32,9 +33,14 @@
 						<p class="tag">{tag}</p>
 					{/each}
 				</div>
-				<a href={websiteUrl} target="_blank" class="example-btn">
-					<Button label="Live Example" size="14px" color="var(--projects-color)"/>
-				</a>
+				<div class="actions">
+					<a href={githubUrl} title="Github" target="_blank" class="github-icon">
+						<Github width="100%" height="100%" />
+					</a>
+					<a href={websiteUrl} target="_blank" class="example-btn">
+						<Button label="Live Example" size="14px" color="var(--projects-color)"/>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -136,10 +142,20 @@
 		background: #1f1f1f;
 	}
 
-	.card .card-wrapper .info-section .example-btn {
+	.actions {
 		margin-top: 35px;
-		display: table;
-		margin-left: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+	}
+
+	.github-icon {
+		width: 32px;
+		height: 38px;
+	}
+
+	.card .card-wrapper .info-section .example-btn {
 	}
 
 </style>
