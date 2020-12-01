@@ -180,7 +180,7 @@
 	}
 
 	.section:hover .clip::before {
-		background-color: rgba(0,0,0, .3);
+		background-color: rgba(0,0,0, .5);
 	}
 
 	/*disabled hover on active section */
@@ -204,7 +204,7 @@
 
 	.title p {
 		font-size: 1.4rem;
-		color: #a0a0a0;
+		color: #d8d8d8;
 		font-weight: 300;
 		transform: translate(-200%);
 		transition: transform var(--transition-time);
