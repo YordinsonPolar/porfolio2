@@ -1,13 +1,50 @@
 <script>
+	import { onMount } from 'svelte';
 	import Projects from '../components/projects/Projects.svelte';
 	import About from '../components/about/About.svelte';
 	import Contact from '../components/contact/Contact.svelte';
 	import BackToTheSection from '../components/BackToTheSection.svelte';
+	import firebase from 'firebase/app';
+	import 'firebase/firestore';
+
+
+	let projectsArr = [];
+	let loadingProjects = false;
+
+	const firebaseConfig = {
+    apiKey: "AIzaSyBK7eCrXEYB9dfwugewpS5yiZ8F5OfZ0GY",
+    authDomain: "porfolio-e2118.firebaseapp.com",
+    databaseURL: "https://porfolio-e2118.firebaseio.com",
+    projectId: "porfolio-e2118",
+    storageBucket: "porfolio-e2118.appspot.com",
+    messagingSenderId: "306051247168",
+    appId: "1:306051247168:web:91befba30ce190044d83a5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const fetchProjects = async () => {
+  	loadingProjects = true;
+		const db = firebase.firestore();
+		try {
+			const ref = await db.collection('projects').get();
+			const data = ref.docs.map(doc => doc.data());
+			projectsArr = data;
+			loadingProjects = false;
+		}
+		catch(err){
+			console.error(err)
+		}
+	}
+
+	onMount(() => fetchProjects());
+	
 
 	let active = "";
 	const animationDelay = 1500;
 
 	const setActive = (option) => active = option;
+
 
 </script>
 
@@ -26,7 +63,7 @@
 				<p>Check my projects</p>
 			</div>
 			{#if active === "projects"}
-				<Projects {animationDelay} />
+				<Projects {animationDelay} projects={projectsArr} />
 			{/if}
 		</div>
 	</section>
