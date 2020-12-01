@@ -1,13 +1,27 @@
 <script>
+	import firebase from 'firebase/app';
+	import 'firebase/firestore';
 	import { onDestroy } from 'svelte';
 	import Line from '../common/Line.svelte';
 	import ProjectsCard from './ProjectCard.svelte';
 	import Tools from './Tools.svelte';
 
+	const firebaseConfig = {
+    apiKey: "AIzaSyBK7eCrXEYB9dfwugewpS5yiZ8F5OfZ0GY",
+    authDomain: "porfolio-e2118.firebaseapp.com",
+    databaseURL: "https://porfolio-e2118.firebaseio.com",
+    projectId: "porfolio-e2118",
+    storageBucket: "porfolio-e2118.appspot.com",
+    messagingSenderId: "306051247168",
+    appId: "1:306051247168:web:91befba30ce190044d83a5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
 	export let animationDelay = 0;
+
 	let animationDone = false;
 	let cardAnimation = false;
-	const cards = [1,2,3,4,5,6];
 
 	const introAnimationDone = setTimeout(()=>{
 		animationDone = true;
@@ -20,7 +34,17 @@
 	onDestroy(() => {
 		clearTimeout(cardsDelay);
 		clearTimeout(introAnimationDone);
-});
+	});
+
+
+	const fetchProjects = async () => {
+		const db = firebase.firestore();
+		const ref = await db.collection('projects').get();
+		
+		const projectsArr = ref.docs.map(doc => doc.data());
+		return projectsArr;
+	}
+
 </script>
 
 
@@ -56,9 +80,16 @@
 					origin="top" 
 					volumen="4px" delay="calc({0.6} * var(--transition-time))" />
 					{#if cardAnimation}
-						{#each cards as card, i}
-							<ProjectsCard animationDelay={(i + 1) * 300} />
+					{#await fetchProjects() then data }
+						{#each data as { title, imageUrl, description, tools }, i}
+							<ProjectsCard
+								{title}
+								{imageUrl}
+								{description}
+								{tools} 
+								animationDelay={(i + 1) * 300} />
 						{/each}
+					{/await}
 					{/if}
 			</div>
 		</div>
