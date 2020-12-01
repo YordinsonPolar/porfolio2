@@ -7,13 +7,15 @@
 	export let description;
 	export let tools;
 	export let imageUrl;
+	export let websiteUrl;
+	export let githubUrl;
 
 	export let animationDelay = 0;
 	const tags = ['Svelte','MongoDB','JWT', "CSS", "HTML", "Javascript", "NodeJS"]
 </script>
 
 <div class="card" style={`--animation-delay: ${animationDelay}ms`}>
-	<Marco aboutDelay="1" color="var(--projects-color)"/>
+	<Marco color="var(--projects-color)"/>
 	<div class="card-wrapper">
 		<div class="img">
 			<img src={imageUrl} alt={title}>
@@ -30,9 +32,9 @@
 						<p class="tag">{tag}</p>
 					{/each}
 				</div>
-				<div class="example-btn">
+				<a href={websiteUrl} target="_blank" class="example-btn">
 					<Button label="Live Example" size="14px" color="var(--projects-color)"/>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -63,11 +65,6 @@
 	.card .card-wrapper {
 		position: relative;
 		background: #292929;
-		transition: 200ms transform;
-	}
-
-	.card .card-wrapper:hover {
-		transform: scale(1.01);
 	}
 
 	.card .card-wrapper .img {
@@ -140,6 +137,7 @@
 	}
 
 	.card .card-wrapper .info-section .example-btn {
+		margin-top: 35px;
 		display: table;
 		margin-left: auto;
 	}

@@ -18,7 +18,6 @@
 		<div 
 			on:click|self={() => setActive("projects")}
 			href="/" 
-			title="Projects"
 			class:active={active === "projects"}
 			class="clip projects-clip"
 			>
@@ -36,7 +35,6 @@
 			on:click|self={() => setActive("about")}
 			class:active={active === "about"}
 			href="/" 
-			title="About" 
 			class="clip about-clip"
 			>
 			<div class="title">
@@ -53,7 +51,6 @@
 			on:click|self={() => setActive("contact")}
 			class:active={active === "contact"}
 			href="/" 
-			title="Contact" 
 			class="clip contact-clip"
 			>
 			<div class="title">

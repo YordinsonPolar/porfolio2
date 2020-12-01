@@ -80,16 +80,18 @@
 					origin="top" 
 					volumen="4px" delay="calc({0.6} * var(--transition-time))" />
 					{#if cardAnimation}
-					{#await fetchProjects() then data }
-						{#each data as { title, imageUrl, description, tools }, i}
-							<ProjectsCard
-								{title}
-								{imageUrl}
-								{description}
-								{tools} 
-								animationDelay={(i + 1) * 300} />
-						{/each}
-					{/await}
+						{#await fetchProjects() then data }
+							{#each data as { title, imageUrl, description, tools, githubUrl, websiteUrl }, i}
+								<ProjectsCard
+									{title}
+									{imageUrl}
+									{description}
+									{tools}
+									{githubUrl}
+									{websiteUrl}
+									animationDelay={(i + 1) * 300} />
+							{/each}
+						{/await}
 					{/if}
 			</div>
 		</div>
