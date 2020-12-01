@@ -30,6 +30,7 @@
 	<section class="projects">
 		<div class="projects-wrapper">
 			<div class="header">
+				<span class="tools-title">Technologies I've used or tried at least once</span>
 				<h2 class="title">
 					<Line
 					  time="var(--transition-time)"
@@ -94,7 +95,17 @@
 	}
 
 	.projects .header {
+		position: relative;
 		display: flex;
+	}
+
+	.tools-title {
+		position: absolute;
+    top: -30px;
+    left: 220px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #b9b9b9;
 	}
 
 	.projects .header .title {
