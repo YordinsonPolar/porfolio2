@@ -10,6 +10,7 @@
 	let projectsArr = [];
 	let loadingProjects = false;
 
+console.log(__process.env.firebaseConfig)
   // Initialize Firebase
   firebase.initializeApp(JSON.parse(__process.env.firebaseConfig));
 
