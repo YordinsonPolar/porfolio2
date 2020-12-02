@@ -4,6 +4,7 @@
 	import ContactForm from './ContactForm.svelte';
 	import Marco from '../common/Marco.svelte';
 	import Line from '../common/Line.svelte';
+	import Map from './Map.svelte';
 
 	export let animationDelay = 0;
 	let animationDone = false;
@@ -30,7 +31,7 @@
 				</span>
 			<div class="map">
 				<Marco color="var(--contact-color)"  position="right" />
-				<img src="/images/about.jpg" alt="mapa">
+				<Map />
 			</div>
 		</div>
 	</section>
