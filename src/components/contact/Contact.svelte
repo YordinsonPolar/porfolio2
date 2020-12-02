@@ -31,7 +31,9 @@
 				</span>
 			<div class="map">
 				<Marco color="var(--contact-color)"  position="right" />
-				<Map />
+				<div class="map-wrapper">
+					<Map />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -70,6 +72,12 @@
 	.contact .sections .map img {
 		position: relative;
 		height: 600px;
+		opacity: 0;
+		animation: vanish var(--transition-time) ease-in-out forwards;
+		animation-delay: 1800ms;
+	}
+
+	.map-wrapper {
 		opacity: 0;
 		animation: vanish var(--transition-time) ease-in-out forwards;
 		animation-delay: 1800ms;
