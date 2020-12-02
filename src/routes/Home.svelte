@@ -10,9 +10,9 @@
 	let projectsArr = [];
 	let loadingProjects = false;
 
-
+console.log(__process.env.MAP_ACCESS_TOKEN)
   // Initialize Firebase
-  firebase.initializeApp(JSON.parse(__process.env.firebaseConfig));
+  // firebase.initializeApp(JSON.parse(__process.env.firebaseConfig));
 
   const fetchProjects = async () => {
   	loadingProjects = true;
