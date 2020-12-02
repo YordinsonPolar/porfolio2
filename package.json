@@ -5,7 +5,6 @@
     "build": "rollup -c",
     "dev": "rollup -c -w ",
     "start": "sirv public --single",
-    "env:dev": "env-cmd yarn dev"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
