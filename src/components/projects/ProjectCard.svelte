@@ -13,13 +13,17 @@
 
 	export let animationDelay = 0;
 	const tags = ['Svelte','MongoDB','JWT', "CSS", "HTML", "Javascript", "NodeJS"]
+
+	const lazyLodingImg = ({ target }) => {
+		target.style.opacity = 1
+	};
 </script>
 
 <div class="card" style={`--animation-delay: ${animationDelay}ms`}>
 	<Marco color="var(--projects-color)"/>
 	<div class="card-wrapper">
 		<div class="img">
-			<img src={imageUrl} alt={title}>
+			<img on:load={lazyLodingImg} src={imageUrl} alt={title}>
 		</div>
 		<div class="info-section">
 			<div class="bg-effect"></div>
@@ -74,7 +78,14 @@
 	}
 
 	.card .card-wrapper .img {
-		min-height: 200px;
+		height: 220px;
+	}
+
+	.card .card-wrapper .img img {
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity var(--transition-time);
 	}
 
 	.card .card-wrapper .info-section {
@@ -105,7 +116,7 @@
 
 	.card .card-wrapper .info-section .title {
 		color: var(--projects-color);
-		font-size: calc(var(--title-size) / 1.6);
+		font-size: calc(var(--title-size) / 1.8);
 	}
 
 	.card .card-wrapper .info-section .description-title {
