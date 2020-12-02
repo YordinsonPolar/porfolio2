@@ -12,7 +12,7 @@
 
 
   // Initialize Firebase
-  // firebase.initializeApp(JSON.parse(__process.env.firebaseConfig));
+  firebase.initializeApp(JSON.parse(process.env.firebaseConfig));
 
   const fetchProjects = async () => {
   	loadingProjects = true;
