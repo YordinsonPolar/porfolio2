@@ -7,21 +7,11 @@
 	import firebase from 'firebase/app';
 	import 'firebase/firestore';
 
-
 	let projectsArr = [];
 	let loadingProjects = false;
 
-	const firebaseConfig = {
-    apiKey: "AIzaSyBK7eCrXEYB9dfwugewpS5yiZ8F5OfZ0GY",
-    authDomain: "porfolio-e2118.firebaseapp.com",
-    databaseURL: "https://porfolio-e2118.firebaseio.com",
-    projectId: "porfolio-e2118",
-    storageBucket: "porfolio-e2118.appspot.com",
-    messagingSenderId: "306051247168",
-    appId: "1:306051247168:web:91befba30ce190044d83a5"
-  };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(JSON.parse(__process.env.firebaseConfig));
 
   const fetchProjects = async () => {
   	loadingProjects = true;

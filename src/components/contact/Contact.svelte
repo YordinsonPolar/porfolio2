@@ -69,14 +69,6 @@
 		position: relative;
 	}
 
-	.contact .sections .map img {
-		position: relative;
-		height: 600px;
-		opacity: 0;
-		animation: vanish var(--transition-time) ease-in-out forwards;
-		animation-delay: 1800ms;
-	}
-
 	.map-wrapper {
 		opacity: 0;
 		animation: vanish var(--transition-time) ease-in-out forwards;
@@ -101,10 +93,6 @@
 			width: 80%;
 			flex-direction: column;
 			margin-top: 50px;
-		}
-
-		.contact .sections .map img {
-			width: 400px;
 		}
 
 		.contact .sections .map {

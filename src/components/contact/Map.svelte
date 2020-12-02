@@ -8,7 +8,7 @@
 	    id: 'mapbox/streets-v11',
 	    tileSize: 512,
 	    zoomOffset: -1,
-	    accessToken: 'pk.eyJ1IjoiZGFuaWVsLXZ6bGEiLCJhIjoiY2tpN214bGxuMHhwOTJwcW8yMXZvaWVpbCJ9.G-MisYf54lkE7M7C_dGf7w'
+	    accessToken: __process.env.MAP_ACCESS_TOKEN, 
 	}).addTo(mymap);
 		var marker = L.marker([10.5, -66.903116]).addTo(mymap);
 		marker.bindPopup("<b style='color: #000'>Yordinson Polar<br>Caracas-Venezuela.<br/>Av. Principal Altamira.<br/><span style='color: var(--contact-color)'>Email: yordinsonpolar@gmail.com</span>").openPopup();

@@ -1,12 +1,37 @@
 <script>
+	import emailjs from 'emailjs-com';
 	import Button from '../common/Button.svelte';
 	import Line from '../common/Line.svelte';
+
 	const values = {
 		name: "",
 		email: "",
 		subject: "",
 		message: "",
 	}
+
+	let messageStatus = "";
+
+	const sendEmail = async () => {
+		messageStatus = "";
+		const templateParams = {
+	    name: values.name,
+	    email: values.email,
+			subject: values.subject,
+	    message: values.message,
+		};
+	   emailjs.send(__process.env.SERVICE_ID,__process.env.TEMPLATE_ID, templateParams, __process.env.USER_ID)
+	    .then(({ status, text }) => {
+	    	console.log('SUCCESS!', status, text);
+	    	messageStatus = "SEND";
+	    })
+	    .catch((err) => {
+	    	console.log('FAILED...', err)
+	    	messageStatus = 'ERROR';
+	    });
+	}
+ 
+
 </script>
 
 <div class="form">
@@ -20,7 +45,7 @@
 				origin="top" 
 				volumen="4px" delay="calc(1.2 * var(--transition-time))" />
 		</div>
-	<form>
+	<form on:submit|preventDefault={sendEmail}>
 		<Line
 		  time="var(--transition-time)"
 		  color="var(--contact-color)" 
@@ -60,10 +85,15 @@
 					origin="left" 
 					volumen="4px" delay="calc(2.8 * var(--transition-time))" />
 			</span>
-			<input type="text" name="name" bind:value={values.name} placeholder="Name" />
+			<input type="text" name="name" bind:value={values.name} placeholder="Name" required />
 		</div>
 		<div class="custom-input email">
-			<input type="text" name="email" bind:value={values.email} placeholder="Email" />
+			<input 
+				type="email" 
+				name="email" 
+				bind:value={values.email} 
+				placeholder="Email" 
+				required />
 		</div>
 		<div class="custom-input subject">
 			<span class="line-input">
@@ -75,7 +105,7 @@
 					origin="left" 
 					volumen="4px" delay="calc(3 * var(--transition-time))" />
 			</span>
-			<input type="text" name="subject" bind:value={values.subject} placeholder="Subject" />
+			<input type="text" name="subject" bind:value={values.subject} placeholder="Subject" required />
 		</div>
 		<div class="custom-input message">
 			<span class="line-input">
@@ -87,7 +117,7 @@
 					origin="left" 
 					volumen="4px" delay="calc(3.2 * var(--transition-time))" />
 			</span>
-			<textarea type="text" name="message" bind:value={values.message} placeholder="Message" />
+			<textarea type="text" name="message" bind:value={values.message} placeholder="Message" required />
 		</div>
 		<div class="button">
 			<Button label="Send email" size="25px" color="var(--contact-color)"/>

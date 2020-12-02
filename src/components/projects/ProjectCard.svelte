@@ -166,7 +166,4 @@
 		height: 38px;
 	}
 
-	.card .card-wrapper .info-section .example-btn {
-	}
-
 </style>
