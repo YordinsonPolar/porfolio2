@@ -42,11 +42,14 @@ export default {
 		file: 'public/build/bundle.js'
 	},
 	plugins: [
-		replace({   FOO: 'bar',      
+		replace({  
 	    __process: JSON.stringify({
 	      env: {
-	         isProd: production,
-	         MAP_ACCESS_TOKEN: process.env.MAP_ACCESS_TOKEN,
+	        firebaseConfig: process.env.firebaseConfig,
+					SERVICE_ID: process.env.SERVICE_ID,
+					TEMPLATE_ID: process.env.TEMPLATE_ID,
+					USER_ID: process.env.USER_ID,
+					MAP_ACCESS_TOKEN: process.env.MAP_ACCESS_TOKEN,
 	      } 
 	   	}),
 	  }),
