@@ -3,7 +3,7 @@
 	import Button from '../common/Button.svelte';
 	import Line from '../common/Line.svelte';
 
-	const values = {
+	let values = {
 		name: "",
 		email: "",
 		subject: "",
@@ -24,6 +24,13 @@
 	    .then(({ status, text }) => {
 	    	console.log('SUCCESS!', status, text);
 	    	messageStatus = "SEND";
+
+    		values = {
+					name: "",
+					email: "",
+					subject: "",
+					message: "",
+				}
 	    })
 	    .catch((err) => {
 	    	console.log('FAILED...', err)
