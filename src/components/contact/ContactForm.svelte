@@ -1,4 +1,5 @@
 <script>
+	import { onDestroy } from 'svelte';
 	import emailjs from 'emailjs-com';
 	import Button from '../common/Button.svelte';
 	import Line from '../common/Line.svelte';
@@ -11,6 +12,7 @@
 	}
 
 	let messageStatus = "";
+	let messageTime = null;
 
 	const sendEmail = async () => {
 		messageStatus = "";
@@ -23,7 +25,7 @@
 	   emailjs.send(__process.env.SERVICE_ID,__process.env.TEMPLATE_ID, templateParams, __process.env.USER_ID)
 	    .then(({ status, text }) => {
 	    	console.log('SUCCESS!', status, text);
-	    	messageStatus = "SEND";
+	    	messageStatus = "SENT";
 
     		values = {
 					name: "",
@@ -35,9 +37,13 @@
 	    .catch((err) => {
 	    	console.log('FAILED...', err)
 	    	messageStatus = 'ERROR';
+	    })
+	    .finally(() => {
+	    	 messageTime = setTimeout(() => messageStatus = "", 2000);
 	    });
-	}
+		}
  
+ 	onDestroy(() => clearTimeout(messageTime))
 
 </script>
 
@@ -132,6 +138,16 @@
 	</form>
 </div>
 
+{#if messageStatus === "SENT"}
+	<div class="form-message correct">
+		Message sended
+	</div>
+{:else if messageStatus === "ERROR"}
+	<div class="form-message error">
+		Error when trying to send mail
+	</div>
+{/if}
+
 <style>
 	.form form {
 		padding: 40px;
@@ -213,6 +229,36 @@
 	.message .line-input {
 		top: 20px;
 		transform: translateY(0);
+	}
+
+	.form-message {
+		position: fixed;
+    top: 100px;
+    left: 0;
+    z-index: 100;
+    padding: 5px 20px;
+    border: var(--border-radius);
+    font-weight: bold;
+    margin-left: 5px;
+    transform: translateX(-200%);
+    animation: translate var(--transition-time) linear forwards;
+	}
+
+	.correct {
+		background: #00d424;
+	}
+
+	.error { 
+		background: #d40000;
+	}
+
+	@keyframes translate {
+		from{
+    	transform: translateX(-200%);
+		}
+		to {
+    	transform: translateX(0);
+		}
 	}
 
 	@keyframes vanish {
