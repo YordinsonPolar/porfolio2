@@ -23,6 +23,6 @@
 <style>
 	#map {
 		height: 650px;
-		width: 500px;
+		width: 100%;
 	}
 </style>

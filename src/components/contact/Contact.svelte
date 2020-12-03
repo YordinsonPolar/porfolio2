@@ -53,7 +53,7 @@
 
 	.contact .sections {
 		width: 90%;
-		max-width: 1000px;
+		max-width: 1600px;
 		margin: 0 auto;
 		display: grid;
 		align-items: center;
