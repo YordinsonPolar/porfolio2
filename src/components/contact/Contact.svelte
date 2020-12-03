@@ -47,8 +47,6 @@
 		width: 100%;
 		min-height: 100vh;
 		height: 100%;
-		margin-bottom: 50px;
-		background: var(--section-bg);
 	}
 
 	.contact .sections {
@@ -93,7 +91,8 @@
 			display: flex;
 			width: 80%;
 			flex-direction: column;
-			margin-top: 50px;
+			padding-top: 50px;
+			padding-bottom: 50px;
 		}
 
 		.contact .sections .map {

@@ -88,7 +88,6 @@
 		display: grid;
 		align-items: center;
 		padding: 80px 0;
-		background: var(--section-bg);
 	}
 
 	.projects .projects-wrapper {

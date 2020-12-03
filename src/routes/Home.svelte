@@ -59,6 +59,9 @@
 	</div>
 {:else}
 	<div class="container" class:active={active !== ""}>
+		<div class="yordinson">
+			<h1>Yordinson Polar</h1>
+		</div>
 		<BackToTheSection bind:active />
 		<section class="section">
 			<div 
@@ -140,6 +143,16 @@
 		transition: 300ms;
 	}
 
+	.yordinson {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		font-size: 1rem;
+		opacity: .3;
+		z-index: 1;
+		pointer-events: none;
+	}
+
 	/* --------- CLIP -------- */
 
 	.container .clip {
@@ -211,10 +224,12 @@
 		background-color: rgba(0,0,0, .5);
 	}
 
-	/*disabled hover on active section */
-	.container.active .section:hover .clip::before {
-		background-color: inherit;
+	.container.active .clip::before {
+		background-color: rgba(0,0,0, .8);
+		transition: background-color var(--transition-time);
+		transition-delay: 1s;
 	}
+
 
 	/* --------------- TITLE ----------------- */
 
