@@ -96,7 +96,7 @@
 
 	<div 
 		class="icon" 
-		data-title="Material UI" 
+		data-title="MaterialUI" 
 		style={`--animation-delay: ${iconsAnimationDelay + 600}ms`}
 		>
 		<MaterialUI width={iconSize} height={iconSize} />

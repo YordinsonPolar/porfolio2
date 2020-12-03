@@ -166,4 +166,8 @@
 		height: 38px;
 	}
 
+	.example-btn {
+		cursor: default;
+	}
+
 </style>
