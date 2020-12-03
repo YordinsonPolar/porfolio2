@@ -4,11 +4,22 @@
 	import About from '../components/about/About.svelte';
 	import Contact from '../components/contact/Contact.svelte';
 	import BackToTheSection from '../components/BackToTheSection.svelte';
+	import Loading from '../components/common/Loading.svelte';
+
 	import firebase from 'firebase/app';
 	import 'firebase/firestore';
 
 	let projectsArr = [];
-	let loadingProjects = false;
+	let loadingProjects = true;
+
+	const randomColor = () => {
+		const loadingColors = [
+			"var(--projects-color)",
+			"var(--about-color)",
+		]
+		const random = Math.floor(Math.random() * loadingColors.length - 1);
+		return loadingColors[random];
+	}
 
 
   // Initialize Firebase
@@ -24,6 +35,7 @@
 			loadingProjects = false;
 		}
 		catch(err){
+			loadingProjects = false;
 			console.error(err)
 		}
 	}
@@ -39,60 +51,76 @@
 
 </script>
 
-<div class="container" class:active={active !== ""}>
-
-	<BackToTheSection bind:active />
-	<section class="section">
-		<div 
-			on:click|self={() => setActive("projects")}
-			href="/" 
-			class:active={active === "projects"}
-			class="clip projects-clip"
-			>
-			<div class="title">
-				<h2>Projects</h2>
-				<p>Check my projects</p>
+{#if loadingProjects}
+	<div class="loading">
+		<Loading size="80px" color={randomColor()} />
+	</div>
+{:else}
+	<div class="container" class:active={active !== ""}>
+		<BackToTheSection bind:active />
+		<section class="section">
+			<div 
+				on:click|self={() => setActive("projects")}
+				href="/" 
+				class:active={active === "projects"}
+				class="clip projects-clip"
+				>
+				<div class="title">
+					<h2>Projects</h2>
+					<p>Check my projects</p>
+				</div>
+				{#if active === "projects"}
+					<Projects {animationDelay} projects={projectsArr} />
+				{/if}
 			</div>
-			{#if active === "projects"}
-				<Projects {animationDelay} projects={projectsArr} />
-			{/if}
-		</div>
-	</section>
-	<section class="section">
-		<div 
-			on:click|self={() => setActive("about")}
-			class:active={active === "about"}
-			href="/" 
-			class="clip about-clip"
-			>
-			<div class="title">
-				<h2>About</h2>
-				<p>Known about me</p>
+		</section>
+		<section class="section">
+			<div 
+				on:click|self={() => setActive("about")}
+				class:active={active === "about"}
+				href="/" 
+				class="clip about-clip"
+				>
+				<div class="title">
+					<h2>About</h2>
+					<p>Known about me</p>
+				</div>
+				{#if active === "about"}
+					<About bind:active {animationDelay} />
+				{/if}
 			</div>
-			{#if active === "about"}
-				<About bind:active {animationDelay} />
-			{/if}
-		</div>
-	</section>
-	<section class="section">
-		<div 
-			on:click|self={() => setActive("contact")}
-			class:active={active === "contact"}
-			href="/" 
-			class="clip contact-clip"
-			>
-			<div class="title">
-				<h2>Contact</h2>
-				<p>Say me hola!</p>
+		</section>
+		<section class="section">
+			<div 
+				on:click|self={() => setActive("contact")}
+				class:active={active === "contact"}
+				href="/" 
+				class="clip contact-clip"
+				>
+				<div class="title">
+					<h2>Contact</h2>
+					<p>Say me hola!</p>
+				</div>
+				{#if active === "contact"}
+					<Contact {animationDelay} />
+				{/if}
 			</div>
-			{#if active === "contact"}
-				<Contact {animationDelay} />
-			{/if}
-		</div>
-	</section>
-</div>
+		</section>
+	</div>
+{/if}
 
 <style>
+	.loading {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background: #404040;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 	.container {
 		display: flex;
