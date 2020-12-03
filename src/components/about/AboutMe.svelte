@@ -76,7 +76,8 @@
 		--timeDelay: 3;
 		--delay: calc( var(--timeDelay) * var(--transition-time));
 		position: relative;
-		padding: 0 80px;
+		padding-left: 80px;
+		padding-right: 40px;
 		min-height: 500px;
 	}
 
@@ -146,17 +147,20 @@
 
 	@media (max-width: 1024px) {
 		.about-me {
-			min-height: 300px;
+			min-height: 330px;
+			padding-bottom: 40px;
 		}
 
 		.about-me div .sinopsis  {
+			margin-bottom: 10px;
 			font-size: 1.2rem;
 		}
 	}
 
-	@media (max-width: 620px) {
+	@media (max-width: 900px) {
 		.about-me {
 			margin-top: 90px;
+			margin-bottom: 30px;
 		}
 	}
 </style>

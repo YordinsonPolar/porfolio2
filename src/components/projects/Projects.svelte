@@ -141,7 +141,7 @@
 	}
 
 	.more-projects-btn {
-		margin-top: 50px;
+		margin-top: 90px;
 		color: var(--projects-color);
 		font-weight: bold;
 		text-align: center;

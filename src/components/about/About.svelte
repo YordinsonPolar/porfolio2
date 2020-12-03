@@ -69,7 +69,6 @@
 		position: relative;
 		height: 80%;
 		width: 100%;
-		margin-bottom: 100px;
 	}
 
 	.img {
@@ -89,9 +88,10 @@
 		height: 4px;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 760px) {
 		.about {
 			height: 100%;
+			padding-bottom: 0;
 		}
 
 		.about-wrapper {
@@ -100,12 +100,13 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			padding: 20px;
+			padding: 0 20px;
 		}
 
 		.img {
-			min-height: 500px;
+			min-height: 300px;
 		}
+
 	}
 	
 </style>
