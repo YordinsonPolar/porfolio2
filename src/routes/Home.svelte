@@ -11,6 +11,7 @@
 
 	let projectsArr = [];
 	let loadingProjects = true;
+	let error = false;
 
 	const randomColor = () => {
 		const loadingColors = [
@@ -35,6 +36,7 @@
 			loadingProjects = false;
 		}
 		catch(err){
+			error = true;
 			loadingProjects = false;
 			console.error(err)
 		}
@@ -109,6 +111,12 @@
 	</div>
 {/if}
 
+{#if error}
+	<div class="error-projects">
+		Error, please reload the page
+	</div>
+{/if}
+
 <style>
 	.loading {
 		position: fixed;
@@ -120,6 +128,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		z-index: 1000;
 	}
 
 	.container {
@@ -294,6 +303,18 @@
 		transform: translateY(200%);
 	}
 
+	.error-projects {
+		position: fixed;
+    top: 100px;
+    left: 0;
+    background: #ef4d4d;
+    z-index: 100;
+    padding: 5px 15px;
+    border-radius: var(--border-radius);
+    margin-left: 5px;
+    font-weight: bold;
+	}
+
 	@media (max-width: 520px) {
 		.container .clip.projects-clip .title  {
 	    left: 10px;
@@ -313,6 +334,7 @@
 			font-size: .9rem;
 		}
 	}
+
 
 
 </style>
