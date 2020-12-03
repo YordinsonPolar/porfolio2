@@ -72,6 +72,9 @@
 					{/if}
 			</div>
 		</div>
+		<a href="https://github.com/Daniel-Vnzla?tab=repositories" target="_blank" class="more-projects-btn">
+			More projects
+		</a>
 	</section>
 {/if}
 
@@ -135,6 +138,17 @@
 		grid-gap: 50px;
 		padding-left: 25px;
 		padding-top: 50px;
+	}
+
+	.more-projects-btn {
+		margin-top: 50px;
+		color: var(--projects-color);
+		font-weight: bold;
+		text-align: center;
+		font-size: 1.4rem;
+		opacity: 0;
+		animation: vanish var(--transition-time) ease-out forwards;
+		animation-delay: 2s;
 	}
 
 	@media (max-width: 620px) {
