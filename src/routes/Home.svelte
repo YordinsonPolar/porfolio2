@@ -18,7 +18,6 @@
 			"var(--about-color)",
 		]
 		const random = Math.ceil(Math.random() * loadingColors.length - 1);
-		console.log(random)
 		return loadingColors[random];
 	}
 
