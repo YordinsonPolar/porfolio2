@@ -17,7 +17,8 @@
 			"var(--projects-color)",
 			"var(--about-color)",
 		]
-		const random = Math.floor(Math.random() * loadingColors.length - 1);
+		const random = Math.ceil(Math.random() * loadingColors.length - 1);
+		console.log(random)
 		return loadingColors[random];
 	}
 

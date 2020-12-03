@@ -12,6 +12,9 @@
 	import Go from '../../icons/go.svg';
 	import Cpp from '../../icons/cplusplus.svg';
 	import Rxjs from '../../icons/rxjs-1.svg';
+	import Svelte from '../../icons/svelte.svg';
+	import ReactJs from '../../icons/react.svg';
+	import MaterialUI from '../../icons/materialdesign.svg';
 
 	const iconSize = "25px";
 	const iconsAnimationDelay = 300;
@@ -32,82 +35,142 @@
 		position="left" 
 		origin="top" 
 		volumen="4px" delay="calc({2.2} * var(--transition-time))" />
-	<div class="icon" data-title="Firebase">
-		<Firebase width={iconSize} height={iconSize} />
-	</div>
+
+
 	<div 
 		class="icon" 
-		data-title="CSS3" 
-		style={`--animation-delay: ${iconsAnimationDelay + 50}ms`}
+		data-title="ReactJS"
+		style={`--animation-delay: ${iconsAnimationDelay}ms`}
 		>
-		<Css3 width={iconSize} height={iconSize} />
+		<ReactJs width={iconSize} height={iconSize} />
 	</div>
 	<div 
 		class="icon" 
-		data-title="Boostrap" 
+		data-title="Svelte"
+		style={`--animation-delay: ${iconsAnimationDelay + 100}ms`}
+		>
+		<Svelte width={iconSize} height={iconSize} />
+	</div>
+
+	<div 
+		class="separator"
 		style={`--animation-delay: ${iconsAnimationDelay + 150}ms`}
-		>
-		<Boostrap width={iconSize} height={iconSize} />
+		>|
 	</div>
-	<div 
-		class="icon" 
-		data-title="GraphQL" 
-		style={`--animation-delay: ${iconsAnimationDelay + 250}ms`}
-		>
-		<GraphQl width={iconSize} height={iconSize} />
-	</div>
-	<div 
-		class="icon" 
-		data-title="Javascript" 
-		style={`--animation-delay: ${iconsAnimationDelay + 350}ms`}
-		>
-		<Javascript width={iconSize} height={iconSize} />
-	</div>
-	<div 
-		class="icon" 
-		data-title="MongoDB" 
-		style={`--animation-delay: ${iconsAnimationDelay + 450}ms`}
-		>
-		<MongoDB width={iconSize} height={iconSize} />
-	</div>
+
 	<div 
 		class="icon" 
 		data-title="HTML5" 
-		style={`--animation-delay: ${iconsAnimationDelay + 550}ms`}
+		style={`--animation-delay: ${iconsAnimationDelay + 200}ms`}
 		>
 		<Html5 width={iconSize} height={iconSize} />
 	</div>
 	<div 
 		class="icon" 
-		data-title="SASS" 
-		style={`--animation-delay: ${iconsAnimationDelay + 650}ms`}
+		data-title="CSS3" 
+		style={`--animation-delay: ${iconsAnimationDelay + 300}ms`}
 		>
-		<Sass width={iconSize} height={iconSize} />
+		<Css3 width={iconSize} height={iconSize} />
 	</div>
 	<div 
 		class="icon" 
-		data-title="GO+" 
+		data-title="Javascript" 
+		style={`--animation-delay: ${iconsAnimationDelay + 400}ms`}
+		>
+		<Javascript width={iconSize} height={iconSize} />
+	</div>
+
+		<div 
+		class="separator"
+		style={`--animation-delay: ${iconsAnimationDelay + 450}ms`}
+		>|
+	</div>
+
+	<div 
+		class="icon" 
+		data-title="Boostrap" 
+		style={`--animation-delay: ${iconsAnimationDelay + 500}ms`}
+		>
+		<Boostrap width={iconSize} height={iconSize} />
+	</div>
+
+	<div 
+		class="icon" 
+		data-title="Material UI" 
+		style={`--animation-delay: ${iconsAnimationDelay + 600}ms`}
+		>
+		<MaterialUI width={iconSize} height={iconSize} />
+	</div>
+
+	<div 
+		class="icon" 
+		data-title="SASS" 
+		style={`--animation-delay: ${iconsAnimationDelay + 700}ms`}
+		>
+		<Sass width={iconSize} height={iconSize} />
+	</div>
+
+		<div 
+		class="separator"
 		style={`--animation-delay: ${iconsAnimationDelay + 750}ms`}
+		>|
+	</div>
+
+	<div 
+		class="icon" 
+		data-title="MongoDB" 
+		style={`--animation-delay: ${iconsAnimationDelay + 800}ms`}
+		>
+		<MongoDB width={iconSize} height={iconSize} />
+	</div>
+
+	<div 
+		class="icon" 
+		data-title="Firebase"
+		style={`--animation-delay: ${iconsAnimationDelay + 900}ms`}
+		>
+		<Firebase width={iconSize} height={iconSize} />
+	</div>
+
+	<div 
+		class="icon" 
+		data-title="GraphQL" 
+		style={`--animation-delay: ${iconsAnimationDelay + 1000}ms`}
+		>
+		<GraphQl width={iconSize} height={iconSize} />
+	</div>
+
+		<div 
+		class="separator"
+		style={`--animation-delay: ${iconsAnimationDelay + 1050}ms`}
+		>|
+	</div>
+
+	<div 
+		class="icon" 
+		data-title="GO+" 
+		style={`--animation-delay: ${iconsAnimationDelay + 1100}ms`}
 		>
 		<Go width={iconSize} height={iconSize} />
 	</div>
 	<div 
 		class="icon" 
 		data-title="C++" 
-		style={`--animation-delay: ${iconsAnimationDelay + 850}ms`}
+		style={`--animation-delay: ${iconsAnimationDelay + 1200}ms`}
 		>
 		<Cpp width={iconSize} height={iconSize} />
 	</div>
 	<div 
 		class="icon" 
 		data-title="Rxjs" 
-		style={`--animation-delay: ${iconsAnimationDelay + 950}ms`}
+		style={`--animation-delay: ${iconsAnimationDelay + 1300}ms`}
 		>
 		<Rxjs width={iconSize} height={iconSize} />
 	</div>
 </div>
 
 <style>
+
 	.tools {
 		width: 100%;
 		display: flex;
@@ -115,6 +178,16 @@
 		padding: 5px 5px;
 		position: relative;
 		margin-left: -4px;
+	}
+
+	.separator {
+		--animation-delay: 0;
+		margin: 6px;
+		margin-right: -5px;
+		font-weight: 300;
+		transform: scale(0);
+		animation: vanish 700ms forwards ease;
+		animation-delay: var(--animation-delay);
 	}
 
 	.icon {
