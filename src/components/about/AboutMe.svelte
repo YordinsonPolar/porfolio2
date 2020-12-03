@@ -51,13 +51,16 @@
 				volumen="4px" delay="calc( 2 * var(--transition-time))" />
 		</span>
 		<p class="sinopsis">
-			I´m Yordinson Polar a self-taught programmer based in Caracas-Venezuela.
-			<br />
-			<br />
-			I´m a like to create new think with the latest in the tecnologie, i´m a enthusiast reactive programming and i have some experience in the backend.
-			<br />
-			<br />
-			when i not coding i am playing the guitar o reading books.
+			I'm Yordinson Polar, a self-taught programmer who lives in Caracas-Venezuela.
+			<br/>
+			<br/>
+			I'm a person passionate about programming who likes to solve problems, with more experience in frontend with ReactJs, I am currently learning reactive programming and my main interest is Full Stack applications.
+			<br/>
+			<br/>
+			One of my main interests when I program is the efficiency of the web pages. My love for Svelte was born there.
+			<br/>
+			<br/>
+			when I'm not coding I spend my free time in literature and occasionally play guitar.
 		</p>
 	</div>
 	
@@ -83,7 +86,7 @@
 		left: 0;
 		font-size: var(--title-size);
 		opacity: 0;
-		border-bottom: 1px solid var(--primary);
+		border-bottom: 1px solid var(--about-color);
 		animation: vanish var(--transition-time) ease-in-out forwards;
 		animation-delay: var(--delay);
 	}
