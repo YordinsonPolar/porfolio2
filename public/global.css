@@ -50,6 +50,19 @@ button {
 	fill: #fff;
 }
 
+	body::-webkit-scrollbar {
+	width: .81rem;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: var(--projects-color);
+	border-radius: 50px;
+	border: solid 4px #000;
+}
+
+body::-webkit-scrollbar-track {
+	background: #000;
+}
 
 @media (max-width: 1024px) {
 	html {
