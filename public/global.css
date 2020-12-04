@@ -8,7 +8,7 @@
 :root {
 	--section-bg: rgba(0,0,0, .7);
 	--border-radius: 4px;
-	--title-size: 4rem;
+	--title-size: 3.5rem;
 	--transition-time: 400ms;
 	--transition-delay: calc(var(--transition-time) / 1.4);
 	--line-delay: calc(var(--transition-time) * 1.4);

@@ -85,6 +85,7 @@
 		position: relative;
 		top: -48px;
 		left: 0;
+		width: 80%;
 		font-size: var(--title-size);
 		opacity: 0;
 		border-bottom: 1px solid var(--about-color);
@@ -93,8 +94,8 @@
 	}
 
 	.about-me h1::first-letter {
-		color: var(--primary);
-		font-size: 4rem;
+		color: var(--about-color);
+		font-size: 5rem;
 	}
 
 	.about-me div {

@@ -48,7 +48,7 @@
 </script>
 
 <div class="form">
-		<h2 class="title">contact</h2>
+		<h2 class="title">Contact</h2>
 		<div class="line-right">
 			<Line
 			  time="var(--transition-time)"
@@ -149,9 +149,13 @@
 {/if}
 
 <style>
-	.form form {
-		padding: 40px;
+	.form {
 		position: relative;
+	}
+
+	.form form {
+		position: relative;
+		padding: 40px;
 		display: grid;
 		grid-gap: 15px;
 		grid-template-columns: repeat(2,1fr);
@@ -161,8 +165,14 @@
 		text-align: center;
 		width: 80%;
 		margin: 0 auto;
+		color: #fff;
 		font-size: var(--title-size);
 		border-bottom: 1px solid var(--contact-color);
+	}
+
+	.form .title::first-letter {
+		font-size: 5rem;
+		color: var(--contact-color);
 	}
 
 	.line-right {

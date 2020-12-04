@@ -119,6 +119,11 @@
 		animation: vanish var(--transition-time) ease-out;
 	}
 
+	.projects .header .title::first-letter {
+		color: var(--projects-color);
+		font-size: 5rem;
+	}
+
 		@keyframes vanish {
 			from {
 				transform: translate(-5%);
