@@ -86,7 +86,7 @@
 		}
 	}
 
-	@media (max-width: 992px) {
+	@media (max-width: 1050px) {
 		.contact .sections {
 			display: flex;
 			width: 80%;

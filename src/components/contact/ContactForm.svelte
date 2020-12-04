@@ -83,7 +83,7 @@
 		<Line
 		  time="var(--transition-time)"
 		  color="var(--contact-color)" 
-			distance="124px" 
+			distance="114px" 
 			position="right" 
 			origin="top" 
 			volumen="4px" delay="calc(2.8 * var(--transition-time))" />
