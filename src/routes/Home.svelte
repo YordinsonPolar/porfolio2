@@ -65,8 +65,7 @@
 		<BackToTheSection bind:active />
 		<section class="section">
 			<div 
-				on:click|self={() => setActive("projects")}
-				href="/" 
+				on:click|self={() => setActive("projects")} 
 				class:active={active === "projects"}
 				class="clip projects-clip"
 				>
@@ -83,7 +82,6 @@
 			<div 
 				on:click|self={() => setActive("about")}
 				class:active={active === "about"}
-				href="/" 
 				class="clip about-clip"
 				>
 				<div class="title">
@@ -99,7 +97,6 @@
 			<div 
 				on:click|self={() => setActive("contact")}
 				class:active={active === "contact"}
-				href="/" 
 				class="clip contact-clip"
 				>
 				<div class="title">
