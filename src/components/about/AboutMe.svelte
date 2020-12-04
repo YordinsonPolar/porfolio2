@@ -51,7 +51,7 @@
 				volumen="4px" delay="calc( 2 * var(--transition-time))" />
 		</span>
 		<p class="sinopsis">
-			I'm <span>Yordinson Polar</span>, a self-taught programmer who lives in Caracas-Venezuela.
+			I'm <span>Yordinson polar</span>, a self-taught Hispanic programmer born in Caracas-Venezuela, I currently speak two languages <span>Spanish-English</span>.
 			<br/>
 			<br/>
 			I'm a person passionate about programming who likes to solve problems, with more experience in <span>frontend</span> with <span>ReactJs</span>, I am currently learning reactive programming and my main interest is Fullstack applications.
