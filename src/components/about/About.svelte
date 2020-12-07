@@ -19,7 +19,7 @@
 
 	onDestroy(() => clearTimeout(introAnimationDone));
 </script>
-
+ 
 {#if animationDone}
 	<section class="about">
 		<div class="about-wrapper">
