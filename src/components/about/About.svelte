@@ -28,7 +28,7 @@
 				<img 
 					class="img" 
 					on:load={lazyLodingImg} 
-					src="/images/about.jpg" 
+					src="/images/me.jpg" 
 					alt="Yordinson Polar">
 			</div>
 			<span class="line">
