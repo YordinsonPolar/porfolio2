@@ -3,7 +3,13 @@
 	import Line from '../common/Line.svelte';
 	import Button from '../common/Button.svelte';
 
+	import Linkedin from '../../icons/linkedin-with-circle.svg';
+	import Github from '../../icons/github.svg';
+	import Twitter from '../../icons/twitter-with-circle.svg';
+
 	export let active;
+
+	const iconSize = "25px";
 
 	const timeout = null;
 	const changeToProjectsSection = () => {
@@ -62,8 +68,28 @@
 			<br/>
 			when I'm not coding I spend my free time in literature and occasionally play guitar.
 		</p>
+		<div class="social-media">
+			<a 
+				target="_blank" 
+				href="https://www.linkedin.com/in/yordinson-polar-b642b6196/" 
+				title="LinkedIn">
+				<Linkedin width={iconSize} height={iconSize} />
+			</a> 
+			<a 
+				target="_blank" 
+				href="https://github.com/Daniel-Vnzla" 
+				title="Github">
+				<Github width={iconSize} height={iconSize} />
+			</a> 
+			<a 
+				target="_blank" 
+				href="https://twitter.com/Daniel_Vnzlaa" 
+				title="Twitter">
+				<Twitter width={iconSize} height={iconSize} />
+			</a> 
+		</div>
 	</div>
-	
+
 	<div 
 		on:click={changeToProjectsSection}
 		class="projects-button">
@@ -115,7 +141,6 @@
 
 	.about-me div .sinopsis {
 		opacity: 0;
-		margin-bottom: 150px;
 		animation: vanish var(--transition-time) ease-in-out forwards;
 		animation-delay: var(--delay);
 	}
@@ -123,6 +148,19 @@
 	.sinopsis span {
 		color: var(--about-color);
 		font-weight: bold;
+	}
+
+	.social-media {
+		opacity: 0;
+		margin-bottom: 120px;
+		margin-top: 30px;
+		animation: vanish var(--transition-time) ease-in-out forwards;
+		animation-delay: var(--delay);
+	}
+
+	.social-media a:not(:first-of-type) {
+		margin-left: 5px;
+
 	}
 
 	.about-me .projects-button {
@@ -153,8 +191,12 @@
 		}
 
 		.about-me div .sinopsis  {
-			margin-bottom: 10px;
 			font-size: 1.2rem;
+		}
+
+		.about-me div .social-media {
+			margin-top: 10px;
+			margin-bottom: 10px;
 		}
 	}
 
