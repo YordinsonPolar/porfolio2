@@ -5,6 +5,7 @@
 	import Tools from './Tools.svelte';
 
 	export let projects;
+	export let freelanceProjects;
 	export let animationDelay = 0;
 
 	let animationDone = false;
@@ -60,7 +61,7 @@
 					origin="top" 
 					volumen="4px" delay="calc({0.6} * var(--transition-time))" />
 					{#if cardAnimation}
-							{#each projects as { title, imageUrl, description, tools, githubUrl, websiteUrl }, i}
+							{#each freelanceProjects as { title, imageUrl, description, tools, githubUrl, websiteUrl }, i}
 								<ProjectsCard
 									{title}
 									{imageUrl}
