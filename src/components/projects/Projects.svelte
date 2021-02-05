@@ -172,6 +172,9 @@
 		font-size: 2.5rem;
 		grid-column: 1 / -1;
 		margin-bottom: -1rem;
+		animation: vanish var(--transition-time) ease-out forwards;
+		animation-delay: 2s;
+		opacity: 0;
 	}
 
 	.more-projects-btn {
