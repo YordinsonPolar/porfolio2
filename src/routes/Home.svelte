@@ -6,10 +6,10 @@
 	import BackToTheSection from '../components/BackToTheSection.svelte';
 	import Loading from '../components/common/Loading.svelte';
 
-	import firebase from 'firebase/app';
-	import 'firebase/firestore';
+	import { fetchProjects, fetchFreelanceProjects } from '../api/firebase.js';
 
 	let projectsArr = [];
+	let freelanceProjects = [];
 	let loadingProjects = true;
 	let error = false;
 
@@ -22,27 +22,12 @@
 		return loadingColors[random];
 	}
 
-
-  // Initialize Firebase
-  firebase.initializeApp(JSON.parse(__process.env.firebaseConfig));
-
-  const fetchProjects = async () => {
-  	loadingProjects = true;
-		const db = firebase.firestore();
-		try {
-			const ref = await db.collection('projects').get();
-			const data = ref.docs.map(doc => doc.data());
-			projectsArr = data;
-			loadingProjects = false;
-		}
-		catch(err){
-			error = true;
-			loadingProjects = false;
-			console.error(err)
-		}
-	}
-
-	onMount(() => fetchProjects());
+	onMount(async () => {
+		loadingProjects = true;
+		projectsArr = await fetchProjects();
+		freelanceProjects = await fetchFreelanceProjects();
+		loadingProjects = false;
+	});
 	
 
 	let active = "";
@@ -74,7 +59,10 @@
 					<p>Check my projects</p>
 				</div>
 				{#if active === "projects"}
-					<Projects {animationDelay} projects={projectsArr} />
+					<Projects 
+						{animationDelay} 
+						projects={projectsArr} 
+						freelanceProjects={freelanceProjects} />
 				{/if}
 			</div>
 		</section>

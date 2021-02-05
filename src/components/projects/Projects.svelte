@@ -51,6 +51,29 @@
 				<Tools />
 			</div>
 			<div class="grid">
+				<h2 class="grid-title">Freelance projects</h2>
+				<Line
+				  time="var(--transition-time)"
+				  color="var(--projects-color)" 
+					distance="100%" 
+					position="left" 
+					origin="top" 
+					volumen="4px" delay="calc({0.6} * var(--transition-time))" />
+					{#if cardAnimation}
+							{#each projects as { title, imageUrl, description, tools, githubUrl, websiteUrl }, i}
+								<ProjectsCard
+									{title}
+									{imageUrl}
+									{description}
+									{tools}
+									{githubUrl}
+									{websiteUrl}
+									animationDelay={(i + 1) * 300} />
+							{/each}
+					{/if}
+			</div>
+			<div class="grid">
+				<h2 class="grid-title">Personal projects</h2>
 				<Line
 				  time="var(--transition-time)"
 				  color="var(--projects-color)" 
@@ -142,6 +165,12 @@
 		grid-gap: 50px;
 		padding-left: 25px;
 		padding-top: 50px;
+	}
+
+	.grid-title {
+		font-size: 2.5rem;
+		grid-column: 1 / -1;
+		margin-bottom: -1rem;
 	}
 
 	.more-projects-btn {
