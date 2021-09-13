@@ -96,7 +96,7 @@
 					{/if}
 			</div>
 		</div>
-		<a href="https://github.com/Daniel-Vnzla?tab=repositories" target="_blank" class="more-projects-btn">
+		<a href="https://github.com/YordinsonPolar" target="_blank" class="more-projects-btn">
 			More projects
 		</a>
 	</section>
