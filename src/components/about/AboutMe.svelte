@@ -77,7 +77,7 @@
 			</a> 
 			<a 
 				target="_blank" 
-				href="https://github.com/Daniel-Vnzla" 
+				href="https://github.com/YordinsonPolar" 
 				title="Github">
 				<Github width={iconSize} height={iconSize} />
 			</a> 
