@@ -12,8 +12,6 @@ export const fetchProjects = async () => {
 		return data;
 	}
 	catch(err){
-		error = true;
-		loadingProjects = false;
 		console.error(err)
 	}
 }
@@ -26,8 +24,6 @@ export const fetchFreelanceProjects = async () => {
 		return data;
 	}
 	catch(err){
-		error = true;
-		loadingProjects = false;
 		console.error(err)
 	}
 }
